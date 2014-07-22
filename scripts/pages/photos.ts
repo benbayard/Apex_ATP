@@ -23,10 +23,8 @@ $("./body"){
 			add_class_to("./div[@class='f-page']","mw-share")
 		}
 		$('./div[not(@class)]/div[@class="textwidget"][1]'){
-			remove('./iframe')
-			add_class_to('./div[contains(@class,"ljt_ad")]','primary_ad'){
-				log('Nope!!')
-			}
+			remove('./iframe')			
 		}
+		
 	}
 }
