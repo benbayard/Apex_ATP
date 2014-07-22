@@ -8,13 +8,10 @@ jQuery(document).ready(function() {
         if(e.target.classList.contains('ob_brnStrip_container')) {
           AddCarousel(e.target);
         }
-        else if(e.target.classList.contains('ljt_ad_300_250')){
-          jQuery(this).addClass('primary_ad');
-        }
       }
   }
    function AddCarousel(target){ 
-    jQuery(".ob_brnStrip_container").each(function(){
+   jQuery(".ob_brnStrip_container").each(function(){
       console.log(":::::AddCarousel Called");
         jQuery(this).addClass("mw-you-like-container");
         jQuery(this).attr("data-ur-set", "carousel");
@@ -22,8 +19,27 @@ jQuery(document).ready(function() {
         scrollcontainer.addClass("mw-you-like").attr("data-ur-carousel-component", "scroll_container");
         scrollcontainer.find('a.item-link-container').attr("data-ur-carousel-component", "item");
         var leftButton = jQuery('<div></div>').addClass('prev').attr("data-ur-carousel-component", "button");
+        var rightButton = jQuery('<div></div>').addClass('next').attr("data-ur-carousel-component", "button");
         jQuery(this).append(leftButton);
-        $(this).Uranium()
+        jQuery(this).append(rightButton);
+
+        var spritesLeft = jQuery('<div></div>').addClass('sprites-icon-S-left_arrow');
+        var spritesRight = jQuery('<div></div>').addClass('sprites-icon-S-right_arrow');
+        jQuery(this).children('.prev').append(spritesLeft);
+        jQuery(this).children('.prev').attr("data-ur-carousel-button-type","prev");
+        jQuery(this).children('.next').append(spritesRight);
+
+        jQuery(this).children('.next').attr("data-ur-carousel-button-type","next");
+        jQuery(this).children('.ob-custom-css').addClass('mw-hide');
+
+        scrollcontainer.find('a.item-link-container').addClass('mw-item-link-frame');
+        scrollcontainer.find('a.item-link-container').find('img.strip-img').addClass('mw-strip-img');
+        scrollcontainer.find('a.item-link-container').find('.ob-text-content').addClass('mw-text-content');
+        (scrollcontainer).before(jQuery(this).children('.next'));
+        (jQuery(this).children('.next')).before(jQuery(this).children('.prev'));
+
+        jQuery('.mw-item-link-frame').css("width",((screen.width-60)/3 - 30))
+        $(this).Uranium();
     });
    
   }
