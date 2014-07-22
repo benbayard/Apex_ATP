@@ -1,0 +1,16 @@
+.mw-details{
+	background: $grey_background;
+  	margin: 0;
+  	.rounded-10{
+		padding: 15px;		
+	}
+	.page{
+		color: $white1;
+		p a{
+			color: $white1;
+		}	
+	}
+	.mw-h1{
+		color: $grey_text;
+	}
+}

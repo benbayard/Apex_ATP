@@ -1,0 +1,45 @@
+footer.mw-footer {
+	background-color: $grey_footer;
+	font-size: $footer-font-size;
+	font-family: $sans-serif;
+	.wrapper{
+		display: flex;
+		margin: 10px;
+        padding-bottom: 8px;
+
+	}
+	.right{
+		margin: 20px 0 0 20px;
+		color: $grey_footer_text;
+		.mw-anchors{
+			padding-top: 5px;
+			a{
+				font-size: $footer-font-size;
+				color: $grey_footer_text;
+				text-decoration: none;
+				font-weight: bold;
+			}
+		}
+		
+	}
+	.mw-app-logo{
+		padding-top: 15px;
+		width: 30%;
+		a{
+			float: left;
+			img {
+				width: 100%;
+			}
+		}
+	}
+	.mw-logo{
+		padding-top: 5px;
+		font-weight: bold;
+	}
+	.mw-google-footer-ad {
+		text-align: center;
+		padding-bottom: 18px;
+	}
+
+
+}

@@ -1,0 +1,52 @@
+// Every page should have a class on the body
+// Scope that in each file at the start
+
+.mw-home {
+  background: $grey_background;
+  margin: 0;
+  .mw-h1{
+    color:  $purple;
+    text-align: center;
+    margin: 15px 0;
+  }
+	.mw-photo-frame{
+    .mw-buttons{
+      position: relative;
+      width: 100%;
+      .prev{
+        position: absolute;
+        margin-top: 25%;
+        left: 15px;
+      }
+      .next{
+        position: absolute;
+        margin-top: 25%;
+        right: 15px;
+      }
+    }
+  .thumbnail{
+    img{
+        width: 100%;
+      }
+    }
+	}
+  .mw-share{
+    border-bottom: 1px solid $grey_border2;
+    text-align: center;
+    h2{
+      font-size: 12px;
+      color: $grey_text;
+      font-weight: normal;
+      display: inline-block;
+    }
+    .textwidget{
+      padding: 10px 0 0 10px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
+  .primary_ad{
+    margin: 15px auto;
+  }
+}
+
