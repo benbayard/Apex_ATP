@@ -48,6 +48,10 @@
     }
   }
 }
+[data-ur-set="carousel"]{
+  max-width: 100%;
+  overflow-x: hidden;
+}
 [data-ur-carousel-component='view_container'] {
   width:100%;
   overflow-x: hidden;

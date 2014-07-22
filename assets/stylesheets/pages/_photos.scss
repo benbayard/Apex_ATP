@@ -48,5 +48,39 @@
   .primary_ad{
     margin: 15px auto;
   }
-}
 
+  .carousel_container {
+    position: relative;
+    height: auto !important; 
+
+    .scroll_container {
+      overflow: hidden;
+      height: 260px;
+
+      .car_item {
+        float: left;
+        height: 250px;
+        margin: 10px;
+        overflow: hidden;
+
+        .item-container {
+          height: 50%;
+        }
+
+        .strip-img {
+          width: 90% !important;
+          height: 50% !important;
+          margin: 5px;
+        }
+
+        .strip-rec-link-title {
+          text-decoration: none;
+          height: 40px;
+          width: 90%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
