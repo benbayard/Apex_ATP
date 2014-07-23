@@ -4,22 +4,26 @@ jQuery(document).ready(function() {
     jQuery('.rounded-10')[0].addEventListener('DOMNodeInserted', CallBack,false);
   });
 
+  item = 0;
   function CallBack(e){
-    if (e.target.nodeName == "DIV") {
+  	if (e.target.nodeName == "DIV") {
         if(e.target.classList.contains('ob_strip_container')) {
-          doTransformation(e.target);
+        	item++;
+			doTransformation(e.target);
+			if(item>4){
+				mergeRecommendations();
+			}
         }
       }
   }
 
   function doTransformation(target){
-    jQuery(".ob_strip_container  style").remove();
+  	jQuery(".ob_strip_container  style").remove();
     jQuery(".ob_container_shadow_outer").remove();
     var length = $(target).find('div.ob_container .ob_container_recs a').length; 
     if(length > 5){
-      var carousel_class = 'carousel_container';
       var ob_container = $(target).find('div.ob_container');
-      ob_container.append('<div class="'+carousel_class+' mw-carousel" data-ur-set="carousel">');
+      ob_container.append('<div class="carousel_container mw-carousel" data-ur-set="carousel">');
       var carousel_container = jQuery(target).find('.carousel_container');
       carousel_container.append('<a data-ur-carousel-component="button" data-ur-carousel-button-type="prev">Prev</a><a data-ur-carousel-component="button" data-ur-carousel-button-type="next">Next</a><div class="scroll_container" data-ur-carousel-component="scroll_container">');  
 
@@ -46,5 +50,31 @@ jQuery(document).ready(function() {
           ob_container.Uranium();
       //});
     }
+  }
+
+  function mergeRecommendations(){
+  	var carousel_container = $('<div class="carousel_container mw-carousel" data-ur-set="carousel">');
+	var carousel_navigation = $('<a data-ur-carousel-component="button" data-ur-carousel-button-type="prev">Prev</a><a data-ur-carousel-component="button" data-ur-carousel-button-type="next">Next</a>');
+	var scroll_container = $('<div class="scroll_container" data-ur-carousel-component="scroll_container">');
+
+	carousel_container.append(carousel_navigation).append(scroll_container);
+	var recommendationsContainer = jQuery('.ob_strip_container:first');
+	$(recommendationsContainer).find('.ob_container .ob_container_recs a').each(function() {
+		var item_container = $('<div data-ur-carousel-component="item" class="car_item">');
+	 	item_container.append(this);
+	 	scroll_container.append(item_container);
+  	});
+
+	recommendationsContainer = jQuery('.ob_strip_container:last');
+  	$(recommendationsContainer).find('.ob_container .ob_container_recs a').each(function(index) {
+  		jQuery(scroll_container).find('.car_item').eq(index).append(this);
+  	});
+
+  	jQuery('div.ob_strip_container:first .ob_container').append(carousel_container);
+  	jQuery('.ob_strip_container:last').remove();
+  	jQuery.getScript( "http://downloads.moovweb.com/uranium/1.0.167/uranium-pretty.js", function( data, textStatus, jqxhr ) {
+          console.log('Script Loaded')
+          jQuery('.carousel_container').Uranium();
+    });
   }
 });
