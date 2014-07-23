@@ -25,7 +25,23 @@ jQuery(document).ready(function() {
       var ob_container = $(target).find('div.ob_container');
       ob_container.append('<div class="carousel_container mw-carousel" data-ur-set="carousel">');
       var carousel_container = jQuery(target).find('.carousel_container');
-      carousel_container.append('<a data-ur-carousel-component="button" data-ur-carousel-button-type="prev">Prev</a><a data-ur-carousel-component="button" data-ur-carousel-button-type="next">Next</a><div class="scroll_container" data-ur-carousel-component="scroll_container">');  
+      var leftButton = jQuery('<div></div>').addClass('prev').attr({
+        "data-ur-carousel-component": "button",
+        "data-ur-carousel-button-type":"prev"
+      });
+      var rightButton = jQuery('<div></div>').addClass('next').attr({
+        "data-ur-carousel-component": "button",
+        "data-ur-carousel-button-type":"next"
+      });    
+
+      var spritesLeft = jQuery('<div></div>').addClass('sprites-icon-S-left_arrow carousel-button');
+      var spritesRight = jQuery('<div></div>').addClass('sprites-icon-S-right_arrow carousel-button');
+      leftButton.append(spritesLeft);
+      rightButton.append(spritesRight);
+
+      carousel_container.append(leftButton);
+      carousel_container.append(rightButton);
+      carousel_container.append('<div class="scroll_container" data-ur-carousel-component="scroll_container">');  
 
       var scroll_container = $(carousel_container).find('.scroll_container');
       var carousel_item = 2;        
@@ -44,11 +60,7 @@ jQuery(document).ready(function() {
       $(target).find(".ob_container_shadow_outer").remove();
       $(target).find(".strip-rec-link-source").remove();
       $(target).find(".car_item").css('width', (screen.width/3)-30);
-      //jQuery(".scroll_container").width('auto');
-      //jQuery.getScript( "http://downloads.moovweb.com/uranium/1.0.167/uranium-pretty.js", function( data, textStatus, jqxhr ) {
-          console.log('Script Loaded')
-          ob_container.Uranium();
-      //});
+      ob_container.Uranium();
     }
   }
 

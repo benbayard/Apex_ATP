@@ -38,8 +38,13 @@ footer.mw-footer {
 	}
 	.mw-google-footer-ad {
 		text-align: center;
-		padding-bottom: 18px;
 	}
-
+	ins.adsbygoogle {
+	  background-color: white;
+	  position: fixed;
+	  bottom: 0px;
+	  z-index: 100;
+	  margin-left: -160px;/* half the width */
+  	}
 
 }
