@@ -54,7 +54,7 @@ jQuery(document).ready(function() {
           carousel_item = 2;
         }
       });
-      jQuery(".ob_strip_container  style, .ob_container_shadow_outer").remove();
+     // jQuery(".ob_strip_container  style, .ob_container_shadow_outer").remove();
       $(target).find(".ob_container_recs, .strip-rec-link-source").remove();
     }
   }
@@ -95,10 +95,11 @@ jQuery(document).ready(function() {
 
   	jQuery(".car_item").css('width', (screen.width/3)-20);
   	jQuery('div.ob_strip_container:first .ob_container').append(carousel_container);
-  	jQuery('.ob_strip_container:last, .mw-loading').remove();
+	jQuery('.ob_strip_container:last, .mw-loading').remove();
   	jQuery('.ob_container, .ob_what').show();
   	jQuery.getScript( "http://downloads.moovweb.com/uranium/1.0.167/uranium-pretty.js", function( data, textStatus, jqxhr ) {
     	jQuery('.carousel_container').Uranium();
+
     });
   }
 });

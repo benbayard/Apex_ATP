@@ -1,10 +1,7 @@
 .mw-details{
 	background: $grey_background;
   	margin: 0;
-  	.rounded-10{
-		padding: 15px;		
-	}
-	.page{
+  	.page{
 		color: $white1;
 		p a{
 			color: $white1;
@@ -12,62 +9,51 @@
 	}
 	.mw-h1{
 		color: $grey_text;
+		padding-left: 30px;	
+		padding-right: 30px;		
+	}
+	.mw-content-style{
+		color: $white1;
+		font-size: $base-font-size;
+		font-family: $arial;
+		padding: 0px 30px 0px 30px;
+	}
+	.outbrainGlobalClass{
+		border-top: 1px solid #363a43;
+		margin: 10px 30px 10px 30px;
 	}
 	.mw-you-like-container{
-				border-top: 1px solid $grey_border;
-				padding-top:	18px;
-				width: 100% !important;
-				.ob_org_header{
-					margin-left: 20px;
-				}
-				.mw-you-like{
-					padding-left: 20px;
-				}
-				.item-link-container{
-					margin: 15px;
-				}
-				.item-container{
-					width: 100% !important;
-				}
-				.mw-strip-img{
-					width: 100% !important;
-					height: 100% !important;
-				}
-				.mw-text-content{
-					width: 75px !important;
-					.strip-rec-link-title{
-						text_decoration: none;
-						color: $grey_text;
-					}
-				}
-				.ob_what{
-				padding: 0px 30px 0px;
-				}
-				.ob_org_header{
-					font-size: 16px;
-					font-weight: bold;
-					font-family: $arial;
-		 			color: $grey_text;
-				}
-
+		height: 160px;
+		overflow:	hidden;
+		padding-top:	0px;
+		.mw-you-like{
+			margin-left: 10.8%;
+		}
+		.item-link-container{
+			margin: 15px;
+		}
+		.item-container{
+			width: 100% !important;
+		}
+		.carousel-button{
+     		margin-top: 35px;
+     		margin-left: 5px;
+    	}
+    	.carousel-button-container{
+    		height: 120px;
+    	}
+		.mw-strip-img{
+			width: 100% !important;
+			height: 100% !important;
+		}
+		.mw-text-content{
+			.strip-rec-link-title{
+				text_decoration: none;
+				color: $grey_text;
 			}
-			[data-ur-carousel-component="button"] {
-			    height: 35%;
-			    width: 10%;
-			    z-index: 25;
-			    background: $grey_background;
-			    [class^="sprites-"]{
-			      position: relative;
-			      top: 56%;
-			      @include transform(translateX(50%) translateY(-50%));
-			    }
-			  }
-			  [data-ur-carousel-button-type="prev"] {
-			    left: 0;
-			    position: absolute;
-			  }
-			  [data-ur-carousel-button-type="next"] {
-			    right: 0;
-			    position: absolute;
-			}
+		}
+		.ob_what{
+		padding: 0px 50px 10px 10px;
+		}
+	}
 }
