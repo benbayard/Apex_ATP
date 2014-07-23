@@ -40,6 +40,12 @@ footer.mw-footer {
 		text-align: center;
 		padding-bottom: 18px;
 	}
-
+	ins.adsbygoogle {
+	  //display: block !important;
+	  position: fixed;
+	  bottom: 0px;
+	  z-index: 100;
+	  margin-left: -160px;/* half the width */
+  	}
 
 }

@@ -40,11 +40,7 @@ jQuery(document).ready(function() {
       $(target).find(".ob_container_shadow_outer").remove();
       $(target).find(".strip-rec-link-source").remove();
       $(target).find(".car_item").css('width', (screen.width/3)-30);
-      //jQuery(".scroll_container").width('auto');
-      //jQuery.getScript( "http://downloads.moovweb.com/uranium/1.0.167/uranium-pretty.js", function( data, textStatus, jqxhr ) {
-          console.log('Script Loaded')
-          ob_container.Uranium();
-      //});
+      ob_container.Uranium();
     }
   }
 });
