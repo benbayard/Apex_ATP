@@ -20,7 +20,9 @@ $("./body"){
 			add_class_to("./div[@class='pics rounded-8']","mw-hide")
 			add_class("mw-browse-share")
 			add_class_to("./div[@class='pics rounded-8']","mw-browse")
-			add_class_to("./div[@class='f-page']","mw-share")
+			add_class_to("./div[@class='f-page']","mw-share"){
+				hide('./div[@class="textwidget"][2]')
+			}
 		}
 		$('./div[not(@class)]/div[@class="textwidget"][1]'){
 			$('..'){
