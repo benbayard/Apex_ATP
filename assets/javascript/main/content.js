@@ -18,13 +18,13 @@ jQuery(document).ready(function() {
         var scrollcontainer = jQuery(this).children('.ob_container');
         scrollcontainer.addClass("mw-you-like").attr("data-ur-carousel-component", "scroll_container");
         scrollcontainer.find('a.item-link-container').attr("data-ur-carousel-component", "item");
-        var leftButton = jQuery('<div></div>').addClass('prev').attr("data-ur-carousel-component", "button");
-        var rightButton = jQuery('<div></div>').addClass('next').attr("data-ur-carousel-component", "button");
+        var leftButton = jQuery('<div></div>').addClass('prev carousel-button-container').attr("data-ur-carousel-component", "button");
+        var rightButton = jQuery('<div></div>').addClass('next carousel-button-container').attr("data-ur-carousel-component", "button");
         jQuery(this).append(leftButton);
         jQuery(this).append(rightButton);
 
-        var spritesLeft = jQuery('<div></div>').addClass('sprites-icon-S-left_arrow');
-        var spritesRight = jQuery('<div></div>').addClass('sprites-icon-S-right_arrow');
+        var spritesLeft = jQuery('<div></div>').addClass('sprites-icon-S-left_arrow carousel-button');
+        var spritesRight = jQuery('<div></div>').addClass('sprites-icon-S-right_arrow carousel-button');
         jQuery(this).children('.prev').append(spritesLeft);
         jQuery(this).children('.prev').attr("data-ur-carousel-button-type","prev");
         jQuery(this).children('.next').append(spritesRight);
@@ -37,6 +37,9 @@ jQuery(document).ready(function() {
         scrollcontainer.find('a.item-link-container').find('.ob-text-content').addClass('mw-text-content');
         (scrollcontainer).before(jQuery(this).children('.next'));
         (jQuery(this).children('.next')).before(jQuery(this).children('.prev'));
+
+        jQuery(this).children('.ob_org_header').addClass('mw-h1');
+        jQuery(this).before(jQuery(this).children('.ob_org_header'));
 
         jQuery('.mw-item-link-frame').css("width",((screen.width-60)/3 - 30))
         $(this).Uranium();
