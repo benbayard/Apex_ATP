@@ -8,6 +8,8 @@ jQuery(document).ready(function() {
   function CallBack(e){
   	if (e.target.nodeName == "DIV") {
         if(e.target.classList.contains('ob_strip_container')) {
+        	$(e.target).find('.ob_container, .ob_what').hide();
+        	$(e.target).append('<div class="mw-loading"></div>');
         	item++;
 			doTransformation(e.target);
 			if(item>4){
@@ -91,9 +93,10 @@ jQuery(document).ready(function() {
   		jQuery(scroll_container).find('.car_item').eq(index).append(this);
   	});
 
+  	jQuery(".car_item").css('width', (screen.width/3)-20);
   	jQuery('div.ob_strip_container:first .ob_container').append(carousel_container);
-  	jQuery('.ob_strip_container:last').remove();
-  	jQuery(".car_item").css('width', (screen.width/3)-30);
+  	jQuery('.ob_strip_container:last, .mw-loading').remove();
+  	jQuery('.ob_container, .ob_what').show();
   	jQuery.getScript( "http://downloads.moovweb.com/uranium/1.0.167/uranium-pretty.js", function( data, textStatus, jqxhr ) {
     	jQuery('.carousel_container').Uranium();
     });
