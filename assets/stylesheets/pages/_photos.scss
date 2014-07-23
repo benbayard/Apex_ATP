@@ -78,7 +78,7 @@
           height: 50%;
         }
         .ob-rec-link-img {
-          height: 90%;
+          height: calc(100% - 45px);
         }
         .strip-img {
           width: 100% !important;
@@ -89,11 +89,32 @@
         .strip-rec-link-title {
           text-decoration: none;
           height: 40px;
-          width: 90%;
+          padding:5px 0px;
           overflow: hidden;
           text-overflow: ellipsis;
         }
       }
     }
+  }
+  .ob_what {
+    text-align: right !important;
+    margin-right: 15px;
+    border-bottom:1px solid #32353e;
+    padding:15px;
+    a{
+      font-size: 14px;
+      font-family:arial;
+      color: #606060;
+      text-decoration: none;
+      margin:15px;
+      
+    }
+  }
+  .AR_2,.AR_1,.AR_3,.AR_4{
+    width:100% !important;
+    margin:10px !important;
+  }
+  .ob_container{
+    width:100% !important;
   }
 }
