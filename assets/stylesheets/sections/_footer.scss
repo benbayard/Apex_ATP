@@ -3,13 +3,11 @@ footer.mw-footer {
 	font-size: $footer-font-size;
 	font-family: $sans-serif;
 	.wrapper{
-		display: flex;
 		margin: 10px;
-        padding-bottom: 8px;
-
-	}
+     }
 	.right{
-		margin: 20px 0 0 20px;
+		margin-top: 5px;
+		margin-left: calc(30% + 10px); /* width of logo + 10px */
 		color: $grey_footer_text;
 		.mw-anchors{
 			padding-top: 5px;
@@ -37,14 +35,16 @@ footer.mw-footer {
 		font-weight: bold;
 	}
 	.mw-google-footer-ad {
-		text-align: center;
+		height: 50px;
 	}
 	ins.adsbygoogle {
 	  background-color: white;
 	  position: fixed;
-	  bottom: 0px;
+	  bottom: 0;
 	  z-index: 100;
-	  margin-left: -160px;/* half the width */
+	  left: 0;
+	  right: 0;
+	  margin: 0 auto;
   	}
 
 }
