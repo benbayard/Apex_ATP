@@ -23,6 +23,12 @@ $("./body"){
 			add_class_to("./div[@class='f-page']","mw-share")
 		}
 		$('./div[not(@class)]/div[@class="textwidget"][1]'){
+			$('..'){
+				attribute("style"){
+					remove()
+				}
+				attribute("style","text-align: center")
+			}
 			remove('./iframe')			
 		}
 		
