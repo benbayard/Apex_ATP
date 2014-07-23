@@ -4,7 +4,7 @@ jQuery(document).ready(function() {
     jQuery('.rounded-10')[0].addEventListener('DOMNodeInserted', CallBack,false);
   });
 
-  item = 0;
+  var item = 0;
   function CallBack(e){
   	if (e.target.nodeName == "DIV") {
         if(e.target.classList.contains('ob_strip_container')) {
@@ -60,11 +60,16 @@ jQuery(document).ready(function() {
   }
 
   function mergeRecommendations(){
-  	var carousel_container = $('<div class="carousel_container mw-carousel" data-ur-set="carousel">');
-	var carousel_navigation = $('<a data-ur-carousel-component="button" data-ur-carousel-button-type="prev">Prev</a><a data-ur-carousel-component="button" data-ur-carousel-button-type="next">Next</a>');
-	var scroll_container = $('<div class="scroll_container" data-ur-carousel-component="scroll_container">');
 
-	var leftButton = jQuery('<div></div>').addClass('prev').attr({
+    var imgWidth = (screen.width/3)-20;
+    var itemHeight = ((imgWidth + 45)*2);
+    console.log('Item Width :' + imgWidth + "item Height : " + itemHeight);    
+    
+    var carousel_container = $('<div class="carousel_container mw-carousel" data-ur-set="carousel">');
+    var carousel_navigation = $('<a data-ur-carousel-component="button" data-ur-carousel-button-type="prev">Prev</a><a data-ur-carousel-component="button" data-ur-carousel-button-type="next">Next</a>');
+    var scroll_container = $('<div class="scroll_container" data-ur-carousel-component="scroll_container">');
+
+    var leftButton = jQuery('<div></div>').addClass('prev').attr({
 	    "data-ur-carousel-component": "button",
 	    "data-ur-carousel-button-type":"prev"
   	});
@@ -73,33 +78,39 @@ jQuery(document).ready(function() {
 	    "data-ur-carousel-button-type":"next"
   	});
 
-  	var spritesLeft = jQuery('<div></div>').addClass('sprites-icon-S-left_arrow carousel-button');
-    var spritesRight = jQuery('<div></div>').addClass('sprites-icon-S-right_arrow carousel-button');
+  	var spritesLeft = jQuery('<div style="margin-top:'+itemHeight / 2+'px"></div>').addClass('sprites-icon-S-left_arrow carousel-button');
+    var spritesRight = jQuery('<div style="margin-top:'+itemHeight / 2+'px"></div>').addClass('sprites-icon-S-right_arrow carousel-button');
     leftButton.append(spritesLeft);
     rightButton.append(spritesRight);
 
     carousel_container.append(leftButton).append(rightButton).append(scroll_container);
 
-	carousel_container.append(scroll_container);
-	var recommendationsContainer = jQuery('.ob_strip_container:first');
-	$(recommendationsContainer).find('.ob_container .ob_container_recs a').each(function() {
-		var item_container = $('<div data-ur-carousel-component="item" class="car_item">');
-	 	item_container.append(this);
-	 	scroll_container.append(item_container);
-  	});
+  	carousel_container.append(scroll_container);
+    
+    var recommendationsContainer = jQuery('.ob_strip_container:first');
+  	$(recommendationsContainer).find('.ob_container .ob_container_recs a').each(function() {
+  		var item_container = $('<div data-ur-carousel-component="item" class="car_item"  style="width:'+imgWidth+'px;height: '+ itemHeight + 'px">');
+      jQuery(this).children('.item-container').css('height',  (imgWidth + 45) );
+  	 	item_container.append(this);
+  	 	scroll_container.css('height', itemHeight ).append(item_container);
+    	});
 
-	recommendationsContainer = jQuery('.ob_strip_container:last');
+     
+  	recommendationsContainer = jQuery('.ob_strip_container:last');
   	$(recommendationsContainer).find('.ob_container .ob_container_recs a').each(function(index) {
-  		jQuery(scroll_container).find('.car_item').eq(index).append(this);
+      jQuery(this).children('.item-container').css('height',  (imgWidth + 45) );
+    	jQuery(scroll_container).find('.car_item').eq(index).append(this);
   	});
 
-  	jQuery(".car_item").css('width', (screen.width/3)-20);
+    
+    
+    jQuery(".car_item").css({width: imgWidth, height: itemHeight});
+    jQuery(".item-container").css('height',  (imgWidth + 45) );
+    jQuery(".scroll_container").css('height', itemHeight );
+    jQuery(".carousel-button").css('margin-top', itemHeight / 2);
   	jQuery('div.ob_strip_container:first .ob_container').append(carousel_container);
-	jQuery('.ob_strip_container:last, .mw-loading').remove();
+	  jQuery('.ob_strip_container:last, .mw-loading').remove();
   	jQuery('.ob_container, .ob_what').show();
-  	jQuery.getScript( "http://downloads.moovweb.com/uranium/1.0.167/uranium-pretty.js", function( data, textStatus, jqxhr ) {
-    	jQuery('.carousel_container').Uranium();
-
-    });
+  	$('.carousel_container').Uranium();
   }
 });

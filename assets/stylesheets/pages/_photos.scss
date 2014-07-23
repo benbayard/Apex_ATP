@@ -64,25 +64,21 @@
     height: auto !important; 
 
     .carousel-button{
-      margin-top: 130px;/*half the height*/
     }
     [data-ur-carousel-component="button"]{
-      height: 260px;
+      height: calc(100% - 10px);
     }
     a.item-link-container {
       width: 100%;
     }
     .scroll_container {
       overflow: hidden;
-      height: 260px;
 
       .car_item {
-        height: 250px;
         margin: 10px;
         overflow: hidden;
 
         .item-container {
-          height: 50%;
         }
         .ob-rec-link-img {
           height: calc(100% - 45px);
