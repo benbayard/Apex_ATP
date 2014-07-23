@@ -2,6 +2,8 @@ jQuery(document).ready(function() {
   jQuery("body.mw-home").each(function(){
   	jQuery('.ljt_ad_300_250').addClass('primary_ad');
     jQuery('.rounded-10')[0].addEventListener('DOMNodeInserted', CallBack,false);
+
+
   });
 
   item = 0;
@@ -9,6 +11,10 @@ jQuery(document).ready(function() {
   	if (e.target.nodeName == "DIV") {
         if(e.target.classList.contains('ob_strip_container')) {
         	item++;
+          if(item == 4){
+            jQuery('e.target').remove();
+            return false;
+          }
 			doTransformation(e.target);
 			if(item>4){
 				mergeRecommendations();
@@ -18,6 +24,7 @@ jQuery(document).ready(function() {
   }
 
   function doTransformation(target){
+
   	var length = $(target).find('div.ob_container .ob_container_recs a').length; 
     if(length > 5){
       var ob_container = $(target).find('div.ob_container');
@@ -98,5 +105,10 @@ jQuery(document).ready(function() {
     	jQuery('.carousel_container').Uranium();
 
     });
+
+     jQuery('.textwidget').eq(4).remove();
+     jQuery("#outbrain_widget_1 div span:nth-child(2)").addClass('mw-ob-org-header');
   }
+
+
 });

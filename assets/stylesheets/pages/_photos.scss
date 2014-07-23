@@ -97,10 +97,9 @@
     }
   }
   .ob_what {
-    text-align: right !important;
-    margin-right: 15px;
-    border-bottom:1px solid #32353e;
     padding:15px;
+    margin-right:19px;
+    margin-top: -20px;
     a{
       font-size: 14px;
       font-family:arial;
@@ -116,5 +115,16 @@
   }
   .ob_container{
     width:100% !important;
+  }
+  .ob_org_header{
+    margin-left:28px;
+    color: #9ca0a1 !important;
+    font-size:14px !important;
+  }
+  .mw-ob-org-header{
+    margin-left: -110px;
+  }
+  .OUTBRAIN{
+    border-bottom:1px solid #32353e;
   }
 }

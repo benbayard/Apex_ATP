@@ -29,7 +29,7 @@ $("./body"){
 				attribute("style"){
 					remove()
 				}
-				attribute("style","text-align: center")
+				
 			}
 			remove('./iframe')			
 		}
