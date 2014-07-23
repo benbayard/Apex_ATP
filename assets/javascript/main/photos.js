@@ -12,6 +12,7 @@ jQuery(document).ready(function() {
         	$(e.target).append('<div class="mw-loading"></div>');
         	item++;
 			doTransformation(e.target);
+      
 			if(item>4){
 				mergeRecommendations();
 			}
@@ -112,5 +113,9 @@ jQuery(document).ready(function() {
 	  jQuery('.ob_strip_container:last, .mw-loading').remove();
   	jQuery('.ob_container, .ob_what').show();
   	$('.carousel_container').Uranium();
+
+    jQuery('.AR_1 span:nth-child(4)').addClass("mw-ob-org-header");
+    jQuery('.AR_4').parent().parent().parent().remove();
   }
+
 });
