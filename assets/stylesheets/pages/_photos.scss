@@ -4,6 +4,10 @@
 .mw-home {
   background: $grey_background;
   margin: 0;
+  .rounded-10 {
+    width: 100%;
+    overflow: hidden;
+  }
   .mw-h1{
     text-align: center;
     margin: 15px 0;
@@ -111,21 +115,22 @@
     }
   }
   .AR_2,.AR_1,.AR_3,.AR_4{
-    width:100% !important;
-    margin:10px !important;
+    width:99% !important;
+    margin:5px !important;
   }
   .ob_container{
-    width:100% !important;
+    width: 99% !important;
   }
   .ob_org_header{
     margin-left:28px;
     color: #9ca0a1 !important;
     font-size:14px !important;
   }
-  .mw-ob-org-header{
-    margin-left: -110px;
-  }
   .OUTBRAIN{
+    margin-left: 1px;
     border-bottom:1px solid #32353e;
+  }
+  .mw-google-ads {
+    text-align: center;
   }
 }

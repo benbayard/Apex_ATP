@@ -79,8 +79,8 @@ jQuery(document).ready(function() {
 	    "data-ur-carousel-button-type":"next"
   	});
 
-  	var spritesLeft = jQuery('<div style="margin-top:'+itemHeight / 2+'px"></div>').addClass('sprites-icon-S-left_arrow carousel-button');
-    var spritesRight = jQuery('<div style="margin-top:'+itemHeight / 2+'px"></div>').addClass('sprites-icon-S-right_arrow carousel-button');
+  	var spritesLeft = jQuery('<div style="margin-top:'+((itemHeight/2)-20)+'px"></div>').addClass('sprites-icon-S-left_arrow carousel-button');
+    var spritesRight = jQuery('<div style="margin-top:'+((itemHeight/2)-20)+'px"></div>').addClass('sprites-icon-S-right_arrow carousel-button');
     leftButton.append(spritesLeft);
     rightButton.append(spritesRight);
 
@@ -108,14 +108,17 @@ jQuery(document).ready(function() {
     jQuery(".car_item").css({width: imgWidth, height: itemHeight});
     jQuery(".item-container").css('height',  (imgWidth + 45) );
     jQuery(".scroll_container").css('height', itemHeight );
-    jQuery(".carousel-button").css('margin-top', itemHeight / 2);
+    jQuery(".carousel-button").css('margin-top', (itemHeight/2)-20);
   	jQuery('div.ob_strip_container:first .ob_container').append(carousel_container);
-	  jQuery('.ob_strip_container:last, .mw-loading').remove();
+    jQuery('.ob_strip_container:last, .mw-loading').remove();
   	jQuery('.ob_container, .ob_what').show();
   	$('.carousel_container').Uranium();
 
     jQuery('.AR_1 span:nth-child(4)').addClass("mw-ob-org-header");
     jQuery('.AR_4').parent().parent().parent().remove();
+    var around_web_recommendations = jQuery('center .OUTBRAIN').detach();
+    jQuery('.OUTBRAIN:first').append(around_web_recommendations);
+    jQuery('.textwidget:eq(2) .adsbygoogle').wrap( "<div class='mw-google-ads'></div>" )
   }
 
 });
