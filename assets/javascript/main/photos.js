@@ -13,9 +13,9 @@ jQuery(document).ready(function() {
         	item++;
 			doTransformation(e.target);
       
-			if(item>4){
-				mergeRecommendations();
-			}
+			if(item>4) {
+                mergeRecommendations();
+            }
         }
       }
   }
@@ -67,7 +67,6 @@ jQuery(document).ready(function() {
     console.log('Item Width :' + imgWidth + "item Height : " + itemHeight);    
     
     var carousel_container = $('<div class="carousel_container mw-carousel" data-ur-set="carousel">');
-    var carousel_navigation = $('<a data-ur-carousel-component="button" data-ur-carousel-button-type="prev">Prev</a><a data-ur-carousel-component="button" data-ur-carousel-button-type="next">Next</a>');
     var scroll_container = $('<div class="scroll_container" data-ur-carousel-component="scroll_container">');
 
     var leftButton = jQuery('<div></div>').addClass('prev').attr({
@@ -85,7 +84,6 @@ jQuery(document).ready(function() {
     rightButton.append(spritesRight);
 
     carousel_container.append(leftButton).append(rightButton).append(scroll_container);
-
   	carousel_container.append(scroll_container);
     
     var recommendationsContainer = jQuery('.ob_strip_container:first');
@@ -95,15 +93,12 @@ jQuery(document).ready(function() {
   	 	item_container.append(this);
   	 	scroll_container.css('height', itemHeight ).append(item_container);
     	});
-
      
   	recommendationsContainer = jQuery('.ob_strip_container:last');
   	$(recommendationsContainer).find('.ob_container .ob_container_recs a').each(function(index) {
       jQuery(this).children('.item-container').css('height',  (imgWidth + 45) );
     	jQuery(scroll_container).find('.car_item').eq(index).append(this);
   	});
-
-    
     
     jQuery(".car_item").css({width: imgWidth, height: itemHeight});
     jQuery(".item-container").css('height',  (imgWidth + 45) );
@@ -118,7 +113,8 @@ jQuery(document).ready(function() {
     jQuery('.AR_4').parent().parent().parent().remove();
     var around_web_recommendations = jQuery('center .OUTBRAIN').detach();
     jQuery('.OUTBRAIN:first').append(around_web_recommendations);
-    jQuery('.textwidget:eq(2) .adsbygoogle').wrap( "<div class='mw-google-ads'></div>" )
+    jQuery('.textwidget:eq(2) .adsbygoogle').wrap("<div class='mw-google-ads'></div>");
+    jQuery('.mw-google-ads').detach().insertAfter('.ob_strip_container:first');
   }
 
 });
