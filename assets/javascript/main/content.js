@@ -14,7 +14,9 @@ jQuery(document).ready(function() {
    jQuery(".ob_brnStrip_container").each(function(){
       console.log(":::::AddCarousel Called");
         jQuery(this).addClass("mw-you-like-container");
-        jQuery(this).attr("data-ur-set", "carousel");
+        jQuery(this).attr(
+          {"data-ur-set" : "carousel", "data-ur-infinite" : "enabled"}
+        );
         var scrollcontainer = jQuery(this).children('.ob_container');
         scrollcontainer.addClass("mw-you-like").attr("data-ur-carousel-component", "scroll_container");
         scrollcontainer.find('a.item-link-container').attr("data-ur-carousel-component", "item");

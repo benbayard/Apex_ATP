@@ -33,6 +33,7 @@ $("./body"){
 			}
 			remove('./iframe')			
 		}
-		
+		## Share with friends moved to bottom
+		move_here("./div[contains(@class, 'mw-browse-share')]","bottom")		
 	}
 }

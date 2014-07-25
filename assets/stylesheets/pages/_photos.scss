@@ -38,19 +38,24 @@
       }
     }
 	}
-  .mw-share{
-    border-bottom: 1px solid $grey_border2;
-    text-align: center;
-    h2{
-      font-size: 12px;
-      color: $grey_text;
-      font-weight: normal;
-      display: inline-block;
-    }
-    .textwidget{
-      padding: 10px 0 0 10px;
-      vertical-align: middle;
-      display: inline-block;
+  .mw-browse-share{
+    margin: 0 30px 0 30px;
+    .mw-share{
+      margin-left: 7px;
+      h2{
+        font-size: 12px;
+        color: $grey_text;
+        font-weight: normal;
+        font-family: $arial;
+        display: inline-block;
+      }
+      .textwidget{
+        vertical-align: middle;
+        display: inline-block;
+        a{
+          padding: 0 3px;
+        }
+      }
     }
   }
   .primary_ad{
@@ -63,7 +68,10 @@
     background-size: 32px 32px;
     height: 200px;
   }
-
+ .mw-border{
+    border-bottom: 1px solid $grey_border2;
+    margin: 15px 30px 15px 30px;
+  }
   .carousel_container {
     position: relative;
     height: auto !important; 
@@ -129,7 +137,6 @@
   }
   .OUTBRAIN{
     margin-left: 1px;
-    border-bottom:1px solid #32353e;
   }
   .mw-google-ads {
     text-align: center;

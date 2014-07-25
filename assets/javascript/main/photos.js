@@ -1,7 +1,9 @@
 jQuery(document).ready(function() {
   jQuery("body.mw-home").each(function(){
-  	jQuery('.textwidget:eq(2) .adsbygoogle').wrap("<div class='mw-google-ads'></div>");
-    jQuery('.rounded-10')[0].addEventListener('DOMNodeInserted', CallBack,false);
+    jQuery('div:not(class) > .textwidget:first-child > .adsbygoogle').wrap("<div class='mw-google-ads'></div>");
+    jQuery('.mw-google-ads').append('<div class="mw-border"></div>');
+    
+  	jQuery('.rounded-10')[0].addEventListener('DOMNodeInserted', CallBack,false);
   });
 
   var item = 0;
@@ -10,6 +12,7 @@ jQuery(document).ready(function() {
         if(e.target.classList.contains('ob_strip_container')) {
         	$(e.target).find('.ob_container, .ob_what').hide();
         	$(e.target).append('<div class="mw-loading"></div>');
+          $(e.target).append('<div class="mw-border"></div>');
         	item++;
 			doTransformation(e.target);
       
