@@ -10,6 +10,7 @@ jQuery(document).ready(function() {
         if(e.target.classList.contains('ob_strip_container')) {
         	$(e.target).find('.ob_container, .ob_what').hide();
         	$(e.target).append('<div class="mw-loading"></div>');
+          $(e.target).append('<div class="mw-border"></div>');
         	item++;
 			doTransformation(e.target);
       
@@ -114,6 +115,7 @@ jQuery(document).ready(function() {
     var around_web_recommendations = jQuery('center .OUTBRAIN').detach();
     jQuery('.OUTBRAIN:first').append(around_web_recommendations);
     jQuery('.textwidget:eq(2) .adsbygoogle').wrap("<div class='mw-google-ads'></div>");
+    jQuery('.mw-google-ads').append('<div class="mw-border"></div>');
     jQuery('.mw-google-ads').detach().insertAfter('.ob_strip_container:first');
     jQuery('.textwidget br').remove();
   }
