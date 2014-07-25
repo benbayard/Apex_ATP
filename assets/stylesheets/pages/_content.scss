@@ -28,7 +28,7 @@
 		padding-top:	0px;
 		width: 100%;
 		.mw-you-like{
-			margin-left: 25px;
+			margin-left: 35px;// carousel button width + item padding
 		}
 		.item-link-container{
 			margin-right: 10px;
@@ -54,6 +54,7 @@
 				text-decoration: none;
 				color: $grey_car_text;
 				text-overflow: ellipsis;
+				color: $thumbnail_title;
 			}
 		}
 		.ob_what{

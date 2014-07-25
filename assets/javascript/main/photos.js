@@ -1,9 +1,10 @@
 jQuery(document).ready(function() {
   jQuery("body.mw-home").each(function(){
+    jQuery('#container')[0].addEventListener('DOMNodeInserted', CallBack,false);
     jQuery('div:not(class) > .textwidget:first-child > .adsbygoogle').wrap("<div class='mw-google-ads'></div>");
     jQuery('.mw-google-ads').append('<div class="mw-border"></div>');
     
-  	jQuery('.rounded-10')[0].addEventListener('DOMNodeInserted', CallBack,false);
+  	
   });
 
   var item = 0;
@@ -65,8 +66,9 @@ jQuery(document).ready(function() {
 
   function mergeRecommendations(){
 
-    var imgWidth = (((screen.width-60)/2) - 20);
-    var itemHeight = ((imgWidth + 45)*2);
+    var imgWidth = (((screen.width-70)/2) - 5); //70 is width of the buttons and 20 is the margin
+    var photoItemHeight = imgWidth + 40 ; //image height + title height
+    var itemHeight = (photoItemHeight + 20 )*2;
     console.log('Item Width :' + imgWidth + "item Height : " + itemHeight);    
     
     var carousel_container = $('<div class="carousel_container mw-carousel" data-ur-set="carousel" data-ur-infinite="enabled">');
@@ -81,8 +83,8 @@ jQuery(document).ready(function() {
 	    "data-ur-carousel-button-type":"next"
   	});
 
-  	var spritesLeft = jQuery('<div style="margin-top:'+((itemHeight/2)-20)+'px"></div>').addClass('sprites-icon-S-left_arrow carousel-button');
-    var spritesRight = jQuery('<div style="margin-top:'+((itemHeight/2)-20)+'px"></div>').addClass('sprites-icon-S-right_arrow carousel-button');
+  	var spritesLeft = jQuery('<div style="margin-top:'+(photoItemHeight-10)+'px"></div>').addClass('sprites-icon-S-left_arrow carousel-button');
+    var spritesRight = jQuery('<div style="margin-top:'+(photoItemHeight-10)+'px"></div>').addClass('sprites-icon-S-right_arrow carousel-button');
     leftButton.append(spritesLeft);
     rightButton.append(spritesRight);
 
@@ -92,21 +94,21 @@ jQuery(document).ready(function() {
     var recommendationsContainer = jQuery('.ob_strip_container:first');
   	$(recommendationsContainer).find('.ob_container .ob_container_recs a').each(function() {
   		var item_container = $('<div data-ur-carousel-component="item" class="car_item"  style="width:'+imgWidth+'px;height: '+ itemHeight + 'px">');
-      jQuery(this).children('.item-container').css('height',  (imgWidth + 45) );
+      jQuery(this).children('.item-container').css('height',  photoItemHeight);
   	 	item_container.append(this);
   	 	scroll_container.css('height', itemHeight ).append(item_container);
     	});
      
   	recommendationsContainer = jQuery('.ob_strip_container:last');
   	$(recommendationsContainer).find('.ob_container .ob_container_recs a').each(function(index) {
-      jQuery(this).children('.item-container').css('height',  (imgWidth + 45) );
+      jQuery(this).children('.item-container').css('height',  photoItemHeight );
     	jQuery(scroll_container).find('.car_item').eq(index).append(this);
   	});
     
     jQuery(".car_item").css({width: imgWidth, height: itemHeight});
-    jQuery(".item-container").css('height',  (imgWidth + 45) );
+    jQuery(".item-container").css('height',  photoItemHeight );
     jQuery(".scroll_container").css('height', itemHeight );
-    jQuery(".carousel-button").css('margin-top', (itemHeight/2)-20);
+    jQuery(".carousel-button").css('margin-top', photoItemHeight-10);
   	jQuery('div.ob_strip_container:first .ob_container').append(carousel_container);
     jQuery('.ob_strip_container:last, .mw-loading').remove();
   	jQuery('.ob_container, .ob_what').show();

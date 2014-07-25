@@ -3,13 +3,11 @@
 	color: $grey_text;
 }
 [data-ur-carousel-component="button"] {
-	width: 25px;
+	width: 15px;
 	z-index: 25;
 	background: $grey_background;	
 	position: absolute;
-	div{		
-		padding: 0 5px;
-	}
+	padding: 0 10px;
 }
 [data-ur-carousel-button-type="prev"] {
 	left: 0;	

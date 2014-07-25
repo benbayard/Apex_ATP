@@ -85,6 +85,7 @@
     }
     .scroll_container {
       overflow: hidden;
+      margin-left: 35px;
       .car_item {
         margin: 10px;
         overflow: hidden;
@@ -107,6 +108,12 @@
           overflow: hidden;
           text-overflow: ellipsis;
           color: $thumbnail_title;
+          /*
+          display: block;
+          display: -webkit-box;
+          margin: 0 auto;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;*/
         }
       }
     }
@@ -124,19 +131,16 @@
   }
   .AR_2,.AR_1,.AR_3,.AR_4{
     width:100% !important;
-    margin:5px !important;
-    padding-top: 5px;
+    margin: 5px 0px !important;
   }
   .ob_container{
     width: 100% !important;
+    padding-top: 5px !important;
   }
   .ob_org_header{
-    margin-left:28px;
+    margin-left:30px;
     color: #9ca0a1 !important;
     font-size:14px !important;
-  }
-  .OUTBRAIN{
-    margin-left: 1px;
   }
   .mw-google-ads {
     text-align: center;
