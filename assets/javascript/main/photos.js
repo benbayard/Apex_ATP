@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
   jQuery("body.mw-home").each(function(){
-  	jQuery('.ljt_ad_300_250').addClass('primary_ad');
+  	jQuery('.textwidget:eq(2) .adsbygoogle').wrap("<div class='mw-google-ads'></div>");
     jQuery('.rounded-10')[0].addEventListener('DOMNodeInserted', CallBack,false);
   });
 
@@ -62,7 +62,7 @@ jQuery(document).ready(function() {
 
   function mergeRecommendations(){
 
-    var imgWidth = (screen.width/3)-20;
+    var imgWidth = (((screen.width-60)/2) - 20);
     var itemHeight = ((imgWidth + 45)*2);
     console.log('Item Width :' + imgWidth + "item Height : " + itemHeight);    
     
@@ -107,14 +107,14 @@ jQuery(document).ready(function() {
   	jQuery('div.ob_strip_container:first .ob_container').append(carousel_container);
     jQuery('.ob_strip_container:last, .mw-loading').remove();
   	jQuery('.ob_container, .ob_what').show();
-  	$('.carousel_container').Uranium();
-
+  	
     jQuery('.AR_1 span:nth-child(4)').addClass("mw-ob-org-header");
     jQuery('.AR_4').parent().parent().parent().remove();
     var around_web_recommendations = jQuery('center .OUTBRAIN').detach();
     jQuery('.OUTBRAIN:first').append(around_web_recommendations);
-    jQuery('.textwidget:eq(2) .adsbygoogle').wrap("<div class='mw-google-ads'></div>");
     jQuery('.mw-google-ads').detach().insertAfter('.ob_strip_container:first');
     jQuery('.textwidget br').remove();
+
+    $('.carousel_container').Uranium();
   }
 });

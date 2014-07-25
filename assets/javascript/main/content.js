@@ -41,7 +41,7 @@ jQuery(document).ready(function() {
         jQuery(this).children('.ob_org_header').addClass('mw-h1');
         jQuery(this).before(jQuery(this).children('.ob_org_header'));
 
-        jQuery('.mw-item-link-frame').css("width",((screen.width-20)/3 - 30))
+        jQuery('.mw-item-link-frame').css("width",((screen.width-60)/2 - 20))
         $(this).Uranium();
     });
    

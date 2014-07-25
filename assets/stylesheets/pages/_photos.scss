@@ -67,7 +67,6 @@
   .carousel_container {
     position: relative;
     height: auto !important; 
-
     .carousel-button{
     }
     [data-ur-carousel-component="button"]{
@@ -78,7 +77,6 @@
     }
     .scroll_container {
       overflow: hidden;
-
       .car_item {
         margin: 10px;
         overflow: hidden;
@@ -100,6 +98,7 @@
           padding:5px 0px;
           overflow: hidden;
           text-overflow: ellipsis;
+          color: $thumbnail_title;
         }
       }
     }
@@ -116,12 +115,12 @@
     }
   }
   .AR_2,.AR_1,.AR_3,.AR_4{
-    width:99% !important;
+    width:100% !important;
     margin:5px !important;
     padding-top: 5px;
   }
   .ob_container{
-    width: 99% !important;
+    width: 100% !important;
   }
   .ob_org_header{
     margin-left:28px;
