@@ -23,7 +23,7 @@
 		margin: 10px 30px 10px 30px;
 	}
 	.mw-you-like-container{
-		height: 200px; // Fixed width for all devices
+		height: $content-carousel-height; 
 		overflow:	hidden;
 		padding-top:	0px;
 		width: 100%;
@@ -44,7 +44,7 @@
      		margin-top: 50px;
     	}
     	.carousel-button-container{
-    		height: 180px; // Fixed width for all devices
+    		height: $content-carousel-btn-height;
     	}
 		.mw-strip-img{
 			width: 100% !important;
