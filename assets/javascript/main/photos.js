@@ -15,16 +15,19 @@ jQuery(document).ready(function() {
         	$(e.target).append('<div class="mw-loading"></div>');
           $(e.target).append('<div class="mw-border"></div>');
         	item++;
-			doTransformation(e.target);
-      
-			if(item>4) {
-                mergeRecommendations();
-            }
+          if(item==3){
+            transformSingleRowCarousel(e.target);
+          }else{
+            transformTwoRowCarousel(e.target);
+          }
+          if(item>4) {
+            mergeRecommendations();
+          }
         }
       }
   }
 
-  function doTransformation(target){
+  function transformTwoRowCarousel(target){
   	var length = $(target).find('div.ob_container .ob_container_recs a').length; 
     if(length > 5){
       var ob_container = $(target).find('div.ob_container');
@@ -120,6 +123,38 @@ jQuery(document).ready(function() {
     jQuery('.mw-google-ads').detach().insertAfter('.ob_strip_container:first');
     jQuery('.textwidget br').remove();
 
-    $('.carousel_container').Uranium();
+     $('.carousel_container, .mw-you-like-container').Uranium();
   }
+  function transformSingleRowCarousel(target){
+        jQuery(target).addClass("mw-you-like-container");
+        jQuery(target).attr(
+            {"data-ur-set" : "carousel", "data-ur-infinite" : "enabled"}
+        );
+        var scrollcontainer = jQuery(target).children('.ob_container');
+        scrollcontainer.addClass("mw-you-like").attr("data-ur-carousel-component", "scroll_container");
+        scrollcontainer.find('a.item-link-container').attr("data-ur-carousel-component", "item");
+        var leftButton = jQuery('<div></div>').addClass('prev carousel-button-container').attr("data-ur-carousel-component", "button");
+        var rightButton = jQuery('<div></div>').addClass('next carousel-button-container').attr("data-ur-carousel-component", "button");
+        jQuery(target).append(leftButton);
+        jQuery(target).append(rightButton);
+
+        var spritesLeft = jQuery('<div></div>').addClass('sprites-icon-S-left_arrow carousel-btn');
+        var spritesRight = jQuery('<div></div>').addClass('sprites-icon-S-right_arrow carousel-btn');
+        jQuery(target).children('.prev').append(spritesLeft);
+        jQuery(target).children('.prev').attr("data-ur-carousel-button-type","prev");
+        jQuery(target).children('.next').append(spritesRight);
+
+        jQuery(target).children('.next').attr("data-ur-carousel-button-type","next");
+        jQuery(target).children('.ob-custom-css').addClass('mw-hide');
+
+        scrollcontainer.find('a.item-link-container').addClass('mw-item-link-frame');
+        scrollcontainer.find('a.item-link-container').find('img.strip-img').addClass('mw-strip-img');
+        scrollcontainer.find('a.item-link-container').find('.ob-text-content').addClass('mw-text-content');
+        (scrollcontainer).before(jQuery(target).children('.next'));
+        (jQuery(target).children('.next')).before(jQuery(target).children('.prev'));
+        jQuery(target).children('.ob_org_header').addClass('mw-h1');
+        jQuery(target).before(jQuery(target).children('.ob_org_header'));
+        jQuery('.mw-item-link-frame').css("width",((screen.width-70)/2 - 10))
+        jQuery(target).find(".strip-rec-link-source").remove();
+    }
 });
