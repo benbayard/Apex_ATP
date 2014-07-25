@@ -114,7 +114,7 @@ jQuery(document).ready(function() {
     jQuery('.AR_4').parent().parent().parent().remove();
     var around_web_recommendations = jQuery('center .OUTBRAIN').detach();
     jQuery('.OUTBRAIN:first').append(around_web_recommendations);
-    jQuery('.textwidget:eq(2) .adsbygoogle').wrap("<div class='mw-google-ads'></div>");
+    jQuery('.textwidget:first .adsbygoogle').wrap("<div class='mw-google-ads'></div>");
     jQuery('.mw-google-ads').append('<div class="mw-border"></div>');
     jQuery('.mw-google-ads').detach().insertAfter('.ob_strip_container:first');
     jQuery('.textwidget br').remove();
