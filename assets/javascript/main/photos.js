@@ -24,7 +24,7 @@ jQuery(document).ready(function() {
   	var length = $(target).find('div.ob_container .ob_container_recs a').length; 
     if(length > 5){
       var ob_container = $(target).find('div.ob_container');
-      ob_container.append('<div class="carousel_container mw-carousel" data-ur-set="carousel">');
+      ob_container.append('<div class="carousel_container mw-carousel" data-ur-set="carousel" data-ur-infinite="enabled">');
       var carousel_container = jQuery(target).find('.carousel_container');
       var leftButton = jQuery('<div></div>').addClass('prev').attr({
         "data-ur-carousel-component": "button",
@@ -66,7 +66,7 @@ jQuery(document).ready(function() {
     var itemHeight = ((imgWidth + 45)*2);
     console.log('Item Width :' + imgWidth + "item Height : " + itemHeight);    
     
-    var carousel_container = $('<div class="carousel_container mw-carousel" data-ur-set="carousel">');
+    var carousel_container = $('<div class="carousel_container mw-carousel" data-ur-set="carousel" data-ur-infinite="enabled">');
     var scroll_container = $('<div class="scroll_container" data-ur-carousel-component="scroll_container">');
 
     var leftButton = jQuery('<div></div>').addClass('prev').attr({
@@ -115,6 +115,6 @@ jQuery(document).ready(function() {
     jQuery('.OUTBRAIN:first').append(around_web_recommendations);
     jQuery('.textwidget:eq(2) .adsbygoogle').wrap("<div class='mw-google-ads'></div>");
     jQuery('.mw-google-ads').detach().insertAfter('.ob_strip_container:first');
+    jQuery('.textwidget br').remove();
   }
-
 });

@@ -10,6 +10,7 @@
   }
   .mw-h1{
     text-align: center;
+    font-size: 13px;
     margin: 15px 0;
     &:first-child{
       color:  $purple;
@@ -22,12 +23,12 @@
       width: 100%;
       .prev{
         position: absolute;
-        margin-top: 45%;
+        margin-top: 50%;
         left: 15px;
       }
       .next{
         position: absolute;
-        margin-top: 45%;
+        margin-top: 50%;
         right: 15px;
       }
     }
@@ -117,6 +118,7 @@
   .AR_2,.AR_1,.AR_3,.AR_4{
     width:99% !important;
     margin:5px !important;
+    padding-top: 5px;
   }
   .ob_container{
     width: 99% !important;
