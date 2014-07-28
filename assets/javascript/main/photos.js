@@ -1,5 +1,10 @@
 jQuery(document).ready(function() {
   var item = 0;
+  var imgWidth = (((screen.width-70)/2) - 5); //70 is width of the buttons and 20 is the margin
+  var photoItemHeight = imgWidth + ((12 + 2) * 2) ; //image height + title height
+  var itemHeight = (photoItemHeight + 20 )*2;
+  console.log('Item Width :' + imgWidth + "item Height : " + itemHeight);    
+    
   jQuery("body.mw-home").each(function(){
     var mainContainer = jQuery('#container');    
     mainContainer.find('.OUTBRAIN').each(function(){
@@ -42,8 +47,8 @@ jQuery(document).ready(function() {
   	var length = jQuery(target).find('div.ob_container .ob_container_recs a').length; 
     if(length > 5){
       var ob_container = jQuery(target).find('div.ob_container');
-      ob_container.append('<div class="carousel_container mw-carousel" data-ur-set="carousel" data-ur-infinite="enabled">');
-      var carousel_container = jQuery(target).find('.carousel_container');
+      ob_container.append('<div class="mw-carousel-container mw-carousel" data-ur-set="carousel" data-ur-infinite="enabled">');
+      var carousel_container = jQuery(target).find('.mw-carousel-container');
       var leftButton = jQuery('<div></div>').addClass('prev').attr({
         "data-ur-carousel-component": "button",
         "data-ur-carousel-button-type":"prev"
@@ -64,7 +69,7 @@ jQuery(document).ready(function() {
       var carousel_item = 2;        
       jQuery(target).find('.ob_container .ob_container_recs a').each(function() {
         if(carousel_item>1){
-         scroll_container.append('<div data-ur-carousel-component="item" class="car_item">');
+          scroll_container.append('<div data-ur-carousel-component="item" class="car_item">');
         }
         var detachedElement = jQuery(this).detach();
         scroll_container.find('.car_item:last').append(detachedElement);
@@ -76,16 +81,17 @@ jQuery(document).ready(function() {
      // jQuery(".ob_strip_container  style, .ob_container_shadow_outer").remove();
       jQuery(target).find(".ob_container_recs, .strip-rec-link-source").remove();
     }
+    jQuery(target).find(".car_item").css({width: imgWidth, height: itemHeight});
+    jQuery(target).find(".item-container").css('height',  photoItemHeight );
+    jQuery(target).find(".scroll_container").css('height', itemHeight );
+    jQuery(target).find(".carousel-button").css('margin-top', photoItemHeight-10);
+        
   }
 
   function mergeRecommendations(){
 
-    var imgWidth = (((screen.width-70)/2) - 5); //70 is width of the buttons and 20 is the margin
-    var photoItemHeight = imgWidth + 40 ; //image height + title height
-    var itemHeight = (photoItemHeight + 20 )*2;
-    console.log('Item Width :' + imgWidth + "item Height : " + itemHeight);    
     
-    var carousel_container = jQuery('<div class="carousel_container mw-carousel" data-ur-set="carousel" data-ur-infinite="enabled">');
+    var carousel_container = jQuery('<div class="mw-carousel-container mw-carousel" data-ur-set="carousel" data-ur-infinite="enabled">');
     var scroll_container = jQuery('<div class="scroll_container" data-ur-carousel-component="scroll_container">');
 
     var leftButton = jQuery('<div></div>').addClass('prev').attr({
@@ -119,11 +125,7 @@ jQuery(document).ready(function() {
     	jQuery(scroll_container).find('.car_item').eq(index).append(this);
   	});
     
-    jQuery(".car_item").css({width: imgWidth, height: itemHeight});
-    jQuery(".item-container").css('height',  photoItemHeight );
-    jQuery(".scroll_container").css('height', itemHeight );
-    jQuery(".carousel-button").css('margin-top', photoItemHeight-10);
-  	jQuery('div.ob_strip_container:first .ob_container').append(carousel_container);
+    jQuery('div.ob_strip_container:first .ob_container').append(carousel_container);
     jQuery('.ob_strip_container:last, .mw-loading').remove();
   	jQuery('.ob_container, .ob_what').show();
   	
@@ -133,16 +135,17 @@ jQuery(document).ready(function() {
     jQuery('.OUTBRAIN:first').append(around_web_recommendations);
     jQuery('.mw-google-ads').detach().insertAfter('.ob_strip_container:first');
     jQuery('.textwidget br').remove();
-
-    $('.carousel_container, .mw-you-like-container').Uranium();//Works only with $ and not with jQuery
+    jQuery('.ob_what').addClass('mw-ob-what');
+    jQuery(".scroll_container").find('a.item-link-container').find('.ob-text-content').addClass('mw-text-content')
+    $('.mw-carousel-container').Uranium();//Works only with $ and not with jQuery
   }
   function transformSingleRowCarousel(target){
-        jQuery(target).addClass("mw-you-like-container");
+        jQuery(target).addClass("mw-carousel-container");
         jQuery(target).attr(
             {"data-ur-set" : "carousel", "data-ur-infinite" : "enabled"}
         );
         var scrollcontainer = jQuery(target).children('.ob_container');
-        scrollcontainer.addClass("mw-you-like").attr("data-ur-carousel-component", "scroll_container");
+        scrollcontainer.addClass("scroll_container").attr("data-ur-carousel-component", "scroll_container");
         scrollcontainer.find('a.item-link-container').attr("data-ur-carousel-component", "item");
         var leftButton = jQuery('<div></div>').addClass('prev carousel-button-container').attr("data-ur-carousel-component", "button");
         var rightButton = jQuery('<div></div>').addClass('next carousel-button-container').attr("data-ur-carousel-component", "button");
@@ -158,14 +161,19 @@ jQuery(document).ready(function() {
         jQuery(target).children('.next').attr("data-ur-carousel-button-type","next");
         jQuery(target).children('.ob-custom-css').addClass('mw-hide');
 
-        scrollcontainer.find('a.item-link-container').addClass('mw-item-link-frame');
-        scrollcontainer.find('a.item-link-container').find('img.strip-img').addClass('mw-strip-img');
-        scrollcontainer.find('a.item-link-container').find('.ob-text-content').addClass('mw-text-content');
+        //scrollcontainer.find('a.item-link-container').addClass('mw-item-link-frame');
+        //scrollcontainer.find('a.item-link-container').find('img.strip-img').addClass('mw-strip-img');
+        //scrollcontainer.find('a.item-link-container').find('.ob-text-content').addClass('mw-text-content');
         (scrollcontainer).before(jQuery(target).children('.next'));
         (jQuery(target).children('.next')).before(jQuery(target).children('.prev'));
         jQuery(target).children('.ob_org_header').addClass('mw-h1');
         jQuery(target).before(jQuery(target).children('.ob_org_header'));
         jQuery('.mw-item-link-frame').css("width",((screen.width-70)/2 - 10))
         jQuery(target).find(".strip-rec-link-source").remove();
+
+        jQuery(target).find("a.item-link-container").css({width: imgWidth, height: photoItemHeight});
+        jQuery(target).find(".item-container").css('height',  photoItemHeight );
+        jQuery(target).find(".scroll_container").css('height', photoItemHeight );
+        jQuery(target).find(".carousel-btn").css('margin-top', ((photoItemHeight-10) /2));
     }
 });

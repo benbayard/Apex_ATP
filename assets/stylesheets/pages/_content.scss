@@ -22,43 +22,4 @@
 		border-top: 1px solid #363a43;
 		margin: 10px 30px 10px 30px;
 	}
-	.mw-you-like-container{
-		height: $content-carousel-height; 
-		overflow:	hidden;
-		padding-top:	0px;
-		width: 100%;
-		.mw-you-like{
-			margin-left: 35px;// carousel button width + item padding
-		}
-		.item-link-container{
-			margin-right: 10px;
-			margin-left: 10px;
-		}
-		.item-container{
-			width: 100% !important;
-			height: 100% !important;
-			margin-bottom: 10px !important;
-			padding-right: 0px !important;
-		}
-		.carousel-button{
-     		margin-top: 50px;
-    	}
-    	.carousel-button-container{
-    		height: $content-carousel-btn-height;
-    	}
-		.mw-strip-img{
-			width: 100% !important;
-		}
-		.mw-text-content{
-			.strip-rec-link-title{
-				text-decoration: none;
-				color: $grey_car_text;
-				text-overflow: ellipsis;
-				color: $thumbnail_title;
-			}
-		}
-		.ob_what{
-		padding: 0px 30px 10px 15px;
-		}
-	}
 }

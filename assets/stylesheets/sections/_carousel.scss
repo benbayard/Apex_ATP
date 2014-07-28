@@ -1,6 +1,9 @@
 .ob_org_header{
 	@extend .mw-h1;
-	color: $grey_text;
+	color: $white3;
+}
+[data-ur-set="carousel"]{
+	position: relative;
 }
 [data-ur-carousel-component="button"] {
 	width: 15px;
@@ -8,10 +11,69 @@
 	background: $grey_background;	
 	position: absolute;
 	padding: 0 10px;
+	height: calc(100% - 10px);
 }
 [data-ur-carousel-button-type="prev"] {
 	left: 0;	
 }
 [data-ur-carousel-button-type="next"] {
 	right: 0;
+}
+.mw-carousel-container{
+	height:	auto; 
+	overflow:	hidden;
+	padding-top: 10px !important;
+	width:	100%;
+	.scroll_container{
+		margin-left: 35px;// carousel button width + item padding
+		overflow: hidden;
+	}
+	.car_item {
+        margin: 10px;
+        overflow: hidden
+    }
+	.item-link-container{
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+	.item-container{
+		width: 100% !important;
+		//height: 100% !important;
+		margin-bottom: 10px !important;
+		padding-right: 0px !important;
+	}
+	.ob-rec-link-img {
+      height: calc(100% - 45px);
+    }
+    .strip-img {
+      width: 100% !important;
+      height: 100% !important;
+      margin: 5px;
+    }
+    .mw-text-content{
+    	.strip-rec-link-title{
+			text-decoration: none;
+			text-overflow: ellipsis;
+			color: $thumbnail_title;
+			height: ($base-font-size + 2)*2;
+	        overflow: hidden;
+	 		display: block;
+			display: -webkit-box;
+			margin: 0 auto;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			font-size: $base-font-size;
+			line-height: $base-font-size + 2;
+			font-family:arial;
+		}
+    }
+}
+.mw-ob-what {
+    padding:10px 15px !important;
+    a{
+      font-family:arial !important;
+      color: $thumbnail_title !important;
+      text-decoration: none;
+      margin: 0 15px;     
+    }
 }

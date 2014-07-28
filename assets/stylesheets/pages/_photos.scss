@@ -72,63 +72,6 @@
     border-bottom: 1px solid $grey_border2;
     margin: 15px 30px 15px 30px;
   }
-  .carousel_container {
-    position: relative;
-    height: auto !important; 
-    .carousel-button{
-    }
-    [data-ur-carousel-component="button"]{
-      height: calc(100% - 10px);
-    }
-    a.item-link-container {
-      width: 100%;
-    }
-    .scroll_container {
-      overflow: hidden;
-      margin-left: 35px;
-      .car_item {
-        margin: 10px;
-        overflow: hidden;
-
-        .item-container {
-        }
-        .ob-rec-link-img {
-          height: calc(100% - 45px);
-        }
-        .strip-img {
-          width: 100% !important;
-          height: 100% !important;
-          margin: 5px;
-        }
-
-        .strip-rec-link-title {
-          text-decoration: none;
-          height: 40px;
-          padding:5px 0px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          color: $thumbnail_title;
-          /*
-          display: block;
-          display: -webkit-box;
-          margin: 0 auto;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;*/
-        }
-      }
-    }
-  }
-  .ob_what {
-    padding:15px;
-    a{
-      font-size: 14px;
-      font-family:arial;
-      color: $thumbnail_title;
-      text-decoration: none;
-      margin:15px;
-      
-    }
-  }
   .AR_2,.AR_1,.AR_3,.AR_4{
     width:100% !important;
     margin: 5px 0px !important;
@@ -141,49 +84,10 @@
   }
   .ob_org_header{
     margin-left:30px;
-    color: #9ca0a1 !important;
+    color: $grey_text !important;
     font-size:14px !important;
   }
   .mw-google-ads {
     text-align: center;
-  }
-    .mw-you-like-container{
-    height: $content-carousel-height;
-    overflow: hidden;
-    padding-top: 0px;
-    width: 100%;
-
-    .mw-you-like{
-      margin-left: 10.8%;
-    }
-    .item-link-container{
-      margin-right: 10px;
-      margin-left: 10px;
-    }
-    .item-container{
-      width: 100% !important;
-      height: 100% !important;
-      margin-bottom: 10px !important;
-      padding-right: 0px !important;
-    }
-    .carousel-btn{
-      margin-top: 50px;
-    }
-    .carousel-button-container{
-      height: $content-carousel-btn-height;
-    }
-    .mw-strip-img{
-      width: 100% !important;
-    }
-    .mw-text-content{
-      .strip-rec-link-title{
-        text-decoration: none;
-        color: $thumbnail_title;
-        text-overflow: ellipsis;
-      }
-    }
-    .ob_what{
-      padding: 0px 30px 10px 15px;
-    }
   }
 }
