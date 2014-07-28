@@ -151,9 +151,11 @@
     height: $content-carousel-height;
     overflow: hidden;
     padding-top: 0px;
+    height: 220px;
     width: 100%;
 
     .mw-you-like{
+      height: 200px;
       margin-left: 10.8%;
     }
     .item-link-container{
@@ -183,7 +185,7 @@
       }
     }
     .ob_what{
-      padding: 0px 30px 10px 15px;
+      padding: 0px 10px 10px 15px;
     }
   }
 }
