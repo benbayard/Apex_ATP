@@ -23,7 +23,7 @@
       position: absolute;
       top: 40%;
       left: 0;
-      background: #0c94d5;
+      background: $carousel_arrow_background;
       padding: 16px 23px 30px 14px;
       .prev {
         position: inherit;
@@ -33,7 +33,7 @@
       position: absolute;
       top: 40%;
       right: 0px;
-      background: #0c94d5;
+      background: $carousel_arrow_background;
       padding: 16px 23px 30px 14px;
       .next {
         position: inherit;
@@ -51,7 +51,7 @@
     .mw-share{
       margin-left: 7px;
       .mw-share-title{
-        font-size: 12px;
+        font-size: $base-font-size;
         color: $grey_text;
         font-weight: normal;
         font-family: $arial;
@@ -88,7 +88,7 @@
   .ob_org_header{
     margin-left:30px;
     color: $white4 !important;
-    font-size:14px !important;
+    font-size:$heading-font-size !important;
   }
   .mw-google-ads {
     text-align: center;
