@@ -13,7 +13,7 @@ jQuery(document).ready(function() {
    function AddCarousel(target){ 
    jQuery(".ob_brnStrip_container").each(function(){
       console.log(":::::AddCarousel Called");
-      var imgWidth = (((screen.width-70)/2) - 20); //70 is width of the buttons and 20 is the margin
+      var imgWidth = (((jQuery(window).width()-70)/2) - 20); //70 is width of the buttons and 20 is the margin
       var photoItemHeight = imgWidth + ((12 + 2) * 2) ; //image height + title height
       console.log('Item Width :' + imgWidth + "item Height : " + photoItemHeight);    
     
