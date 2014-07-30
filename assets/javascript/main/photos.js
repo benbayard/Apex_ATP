@@ -15,8 +15,8 @@ jQuery(document).ready(function() {
         jQuery(this)[0].addEventListener('DOMNodeInserted', CallBack,false);
       }      
     })
-    jQuery('div:not(class) > .textwidget:first-child > .adsbygoogle').wrap("<div class='mw-google-ads'></div>");
-    jQuery('.mw-google-ads').append('<div class="mw-border"></div>');
+    jQuery('div:not(class) > .textwidget:first-child > .adsbygoogle').wrap("<div class='primary-ad'></div>");
+    jQuery('.primary-ad').append('<div class="mw-border"></div>');
   	
   });
 
@@ -123,7 +123,7 @@ jQuery(document).ready(function() {
     jQuery('.AR_4').parent().parent().parent().remove();
     var around_web_recommendations = jQuery('center .OUTBRAIN').detach();
     jQuery('.OUTBRAIN:first').append(around_web_recommendations);
-    jQuery('.mw-google-ads').detach().insertAfter('.ob_strip_container:first');
+    jQuery('.primary-ad').detach().insertAfter('.ob_strip_container:first');
     jQuery('.textwidget br').remove();
     jQuery('.ob_what').addClass('mw-ob-what');
     jQuery('.ob_what:first').detach().insertAfter(scroll_container);
