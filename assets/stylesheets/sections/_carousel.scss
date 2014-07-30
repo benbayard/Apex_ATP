@@ -11,7 +11,7 @@
 	background: $grey_background;	
 	position: absolute;
 	padding: 0 10px;
-	height: calc(100% - 10px);
+	@include  calculated-prop('height','100% - 10px', '98%');
 }
 [data-ur-carousel-button-type="prev"] {
 	left: 0;	
@@ -43,7 +43,7 @@
 		padding-right: 0px !important;
 	}
 	.ob-rec-link-img {
-      height: calc(100% - 45px);
+      @include  calculated-prop('height','100% - 45px', '75%');
     }
     .strip-img {
       width: 100% !important;

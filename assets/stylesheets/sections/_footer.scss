@@ -7,7 +7,7 @@ footer.mw-footer {
      }
 	.right{
 		margin-top: 5px;
-		margin-left: calc(30% + 10px); /* width of logo + 10px */
+		@include calculated-prop('margin-left','30% + 10px','35%');/* width of logo + 10px */
 		color: $grey_footer_text;
 		.mw-anchors{
 			padding-top: 5px;

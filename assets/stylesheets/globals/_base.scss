@@ -16,3 +16,9 @@
 	//white-space: nowrap;
 	overflow: hidden;
 }
+@mixin calculated-prop($prop, $calcheight, $defaultValue){
+	#{$prop}: #{$defaultValue};
+	#{$prop}: -webkit-calc(#{$calcheight});
+	#{$prop}: -moz-calc(#{$calcheight});
+	#{$prop}: calc(#{$calcheight});
+}
