@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
   var item = 0;
   var imgWidth = (((screen.width-70)/2) - 5); //70 is width of the buttons and 20 is the margin
   var photoItemHeight = imgWidth + ((12 + 2) * 2) ; //image height + title height
-  var itemHeight = (photoItemHeight + 10 )*2;
+  var itemHeight = (photoItemHeight * 2) + 10;
   console.log('Item Width :' + imgWidth + "item Height : " + itemHeight);    
     
   jQuery("body.mw-home").each(function(){
