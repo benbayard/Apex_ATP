@@ -35,14 +35,18 @@ $("./body"){
                 hide('./div[@class="textwidget"][2]')
 			}
 		}
-		$('./div[not(@class)]/div[@class="textwidget"][1]'){
-			$('..'){
-				attribute("style"){
+		$('./div[not(@class)]'){
+			attribute("style"){
 					remove()
-				}
-				
 			}
-			remove('./iframe')			
+			$('./div[@class="textwidget"][1]'){
+				remove('./iframe')
+				remove('./ins')
+				insert('div', class:  "primary-ad "){
+	 				insert_anchor_ad(300, 250, "7379774542")
+	 				insert('div', class: "mw-border")
+	 			}				
+			}		
 		}
 		## Share with friends moved to bottom
 		move_here("./div[contains(@class, 'mw-browse-share')]","bottom")		
