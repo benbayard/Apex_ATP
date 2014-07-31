@@ -4,17 +4,17 @@ $("./body"){
 	    $("./div[@class='left rounded-8']"){
 	    	$("./div[@class='buttons']"){
 				add_class_to("./div[@id='floating-box']","mw-hide")
-				add_class_to("./a[@class='prev']","sprites-icon-S-left_arrow")
-				add_class_to("./a[@class='next']","sprites-icon-S-right_arrow")
 			}
 			$("./div[@class='pic rounded-8']"){
 				add_class("mw-photo-frame")
 				move_here("../div[@class='buttons']/a","top"){
                     match(index(),1){
-                        wrap("div", class: 'prev_main')
-                    }match(index(),2){
-                        wrap("div", class: 'next_main')
-                    }
+						add_class('prev_main')
+						insert('div', class: 'prev sprites-icon-S-left_arrow')
+					}match(index(),2){
+						add_class('next_main')
+						insert('div', class: 'next sprites-icon-S-right_arrow')
+					}
                 }
                 $("./div[@class='thumbnail']"){
                  	add_class_to("./img","mw-photo-main")
