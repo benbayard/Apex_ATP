@@ -15,8 +15,8 @@ jQuery(document).ready(function() {
       console.log(":::::AddCarousel Called");
       var jWindow = jQuery(window);
       var screenWidth = jWindow.width() < jWindow.height()? jWindow.width() : jWindow.height();
-      var imgWidth = (((screenWidth-70)/2) - 5); //70 is width of the buttons and 20 is the margin
-      var photoItemHeight = imgWidth + ((12 + 2) * 2) ; //image height + title height
+      var imgWidth = (((screenWidth-60)/2)- 20); //70 is width of the buttons and 20 is the margin
+      var photoItemHeight = imgWidth + ((12 + 2) * 2) + 30 ; //image height + title height
       console.log('Item Width :' + imgWidth + "item Height : " + photoItemHeight);    
     
       jQuery(this).addClass("mw-carousel-container");
@@ -31,8 +31,8 @@ jQuery(document).ready(function() {
       jQuery(this).append(leftButton);
       jQuery(this).append(rightButton);
 
-      var spritesLeft = jQuery('<div style="margin-top:'+((photoItemHeight -10) /2)+'px"></div>').addClass('sprites-icon-S-left_arrow carousel-button');
-      var spritesRight = jQuery('<div style="margin-top:'+((photoItemHeight -10) /2)+'px"></div>').addClass('sprites-icon-S-right_arrow carousel-button');
+      var spritesLeft = jQuery('<div style="margin-top:'+((imgWidth /2) - 10)+'px"></div>').addClass('sprites-icon-S-left_arrow carousel-button');
+      var spritesRight = jQuery('<div style="margin-top:'+((imgWidth /2) - 10)+'px"></div>').addClass('sprites-icon-S-right_arrow carousel-button');
       jQuery(this).children('.prev').append(spritesLeft);
       jQuery(this).children('.prev').attr("data-ur-carousel-button-type","prev");
       jQuery(this).children('.next').append(spritesRight);
@@ -51,9 +51,11 @@ jQuery(document).ready(function() {
 
       jQuery('a.item-link-container').css({width: imgWidth, height: photoItemHeight})
       jQuery(".item-container").css('height',   photoItemHeight);
-      jQuery(".scroll_container").css('height', photoItemHeight  );
+      jQuery(".scroll_container").css('height', photoItemHeight);
       jQuery('.ob_what').addClass('mw-ob-what');
+      jQuery('.ob-rec-link-img').css('height',imgWidth);
       $(this).Uranium();
+
     });
    
   }

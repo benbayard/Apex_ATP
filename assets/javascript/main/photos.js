@@ -2,9 +2,9 @@ jQuery(document).ready(function() {
   var item = 0;
   var jWindow = jQuery(window);
   var screenWidth = jWindow.width() < jWindow.height()? jWindow.width() : jWindow.height();
-  var imgWidth = (((screenWidth-70)/2) - 5); //70 is width of the buttons and 20 is the margin
-  var photoItemHeight = imgWidth + ((12 + 2) * 2) ; //image height + title height
-  var itemHeight = (photoItemHeight * 2) + 10;
+  var imgWidth = (((screenWidth-60)/2) - 20); //70 is width of the buttons and 20 is the margin
+  var photoItemHeight = imgWidth + ((12 + 2) * 2) + 20 ; //image height + title height + title padding
+  var itemHeight = (photoItemHeight * 2) + 20;
   console.log('Item Width :' + imgWidth + "item Height : " + itemHeight);    
   jQuery("body.mw-home").each(function(){
     var mainContainer = jQuery('#container');    
@@ -67,7 +67,7 @@ jQuery(document).ready(function() {
     jQuery(target).find(".car_item").css({width: imgWidth, height: itemHeight});
     jQuery(target).find(".item-container").css('height',  photoItemHeight );
     jQuery(target).find(".scroll_container").css('height', itemHeight );
-    jQuery(target).find(".carousel-button").css('margin-top', photoItemHeight + 10);
+    jQuery(target).find(".carousel-button").css('margin-top', photoItemHeight);
         
   }
   function applyUraniumAttr(carousel_container,scroll_container){
@@ -129,7 +129,9 @@ jQuery(document).ready(function() {
     jQuery('.ob_what:first').detach().insertAfter(scroll_container);
     jQuery('.mw-carousel-container').append('<div class="mw-border"></div>');
     jQuery(".scroll_container").find('a.item-link-container').find('.ob-text-content').addClass('mw-text-content')
+    jQuery('.ob-rec-link-img').css('height',imgWidth);
     $('.mw-carousel-container').Uranium();//Works only with $ and not with jQuery
+
   }
   function transformSingleRowCarousel(target){
         jQuery(target).addClass("mw-carousel-container");
@@ -140,12 +142,12 @@ jQuery(document).ready(function() {
 
         jQuery(target).children('.ob_org_header').addClass('mw-h1');
         jQuery(target).before(jQuery(target).children('.ob_org_header'));
-        jQuery('.mw-item-link-frame').css("width",((screen.width-70)/2 - 10))
+        //jQuery('.mw-item-link-frame').css("width",((screen.width-70)/2 - 10))
         jQuery(target).find(".strip-rec-link-source").remove();
 
         jQuery(target).find("a.item-link-container").css({width: imgWidth, height: photoItemHeight});
         jQuery(target).find(".item-container").css('height',  photoItemHeight );
-        jQuery(target).find(".scroll_container").css('height', photoItemHeight );
+        jQuery(target).find(".scroll_container").css('height', photoItemHeight + 10 );
         jQuery(target).find(".carousel-button").css('margin-top', ((imgWidth /2) - 10));
     }
 });

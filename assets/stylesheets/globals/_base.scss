@@ -22,3 +22,6 @@
 	#{$prop}: -moz-calc(#{$calcheight});
 	#{$prop}: calc(#{$calcheight});
 }
+*{
+	box-sizing: border-box;
+}

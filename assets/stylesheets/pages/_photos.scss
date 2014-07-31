@@ -25,7 +25,8 @@
       top: 40%;
       left: 0;
       background: $carousel_arrow_background;
-      padding: 16px 23px 30px 14px;
+      padding: 15px 10px 30px;
+      width: 30px;
       .prev {
         position: inherit;
       }
@@ -35,13 +36,14 @@
       top: 40%;
       right: 0px;
       background: $carousel_arrow_background;
-      padding: 16px 23px 30px 14px;
+      padding: 15px 10px 30px;
+      width: 30px;
       .next {
         position: inherit;
       }
     }
     .thumbnail{
-      margin: 0 37px 0 37px;
+      margin: 0 30px;
       .mw-photo-main{
         width: 100%;
       }
