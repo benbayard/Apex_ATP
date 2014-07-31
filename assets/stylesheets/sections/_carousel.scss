@@ -12,7 +12,7 @@
 	position: absolute;
 	padding: 0 10px;
 	height: 100%;
-	margin: 15px 0;
+	margin: 0 0 30px;
 }
 [data-ur-carousel-button-type="prev"] {
 	left: 0;	
@@ -31,11 +31,11 @@
 		padding-top: 5px !important;
 	}
 	.car_item {
-        margin: 10px;
+       	margin: 0 10px 10px 10px;
         overflow: hidden
     }
 	.item-link-container{
-		margin: 10px;
+		margin: 0 10px 10px 10px;
 	}
 	.item-container{
 		width: 100% !important;
@@ -63,6 +63,7 @@
 			margin: 0 auto;
 			-webkit-line-clamp: 2;
 			-webkit-box-orient: vertical;
+			-webkit-text-size-adjust:none;
 			font-size: $base-font-size;
 			line-height: $base-font-size + 2;
 			font-family:arial;
@@ -71,11 +72,12 @@
     }
 }
 .mw-ob-what {
-    padding: 10px 15px 2px !important;
-    a{
+	padding: 10px 15px 2px !important;
+	a{
       font-family:arial !important;
       color: $thumbnail_title !important;
       text-decoration: none;
+      -webkit-text-size-adjust:none;
       margin: 0 15px;     
     }
 }

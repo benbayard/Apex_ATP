@@ -40,8 +40,6 @@ jQuery(document).ready(function() {
       jQuery(this).children('.next').attr("data-ur-carousel-button-type","next");
       jQuery(this).children('.ob-custom-css').addClass('mw-hide');
 
-      //scrollcontainer.find('a.item-link-container').addClass('mw-item-link-frame');
-      //scrollcontainer.find('a.item-link-container').find('img.strip-img').addClass('mw-strip-img');
       scrollcontainer.find('a.item-link-container').find('.ob-text-content').addClass('mw-text-content');
       (scrollcontainer).before(jQuery(this).children('.next'));
       (jQuery(this).children('.next')).before(jQuery(this).children('.prev'));
