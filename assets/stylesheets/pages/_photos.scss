@@ -4,6 +4,14 @@
 .mw-home {
   background: $grey_background;
   margin: 0;
+
+  .mw-carousel-holder {
+    padding: 0px 20px;
+    .primary-ad {
+      margin-left: -10px;
+    }
+  }
+
   .rounded-10 {
     width: 100%;
     overflow: hidden;
