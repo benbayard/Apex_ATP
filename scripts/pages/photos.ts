@@ -14,12 +14,15 @@ $("./body"){
                         wrap("div", class: 'prev_main')
                     }match(index(),2){
                         wrap("div", class: 'next_main')
-                        $next_link = fetch("@href")
                     }
                 }
-                add_class_to("./div[@class='thumbnail']/img","mw-photo-main"){
-					wrap("a", href: $next_link)
-				}
+                $("./div[@class='thumbnail']"){
+                 	add_class_to("./img","mw-photo-main")
+                 	## Next page navigation when user clicks on main image
+                 	copy_here("./../div[@class='next_main']/a"){
+                 	 	move_here("./../img")
+                 	}
+                }
 			}
 			add_class_to("./h1","mw-h1")
 		}
