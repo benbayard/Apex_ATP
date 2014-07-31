@@ -9,14 +9,17 @@ $("./body"){
 			}
 			$("./div[@class='pic rounded-8']"){
 				add_class("mw-photo-frame")
-				add_class_to("./div[@class='thumbnail']/img","mw-photo-main")
-                move_here("../div[@class='buttons']/a","top"){
+				move_here("../div[@class='buttons']/a","top"){
                     match(index(),1){
                         wrap("div", class: 'prev_main')
                     }match(index(),2){
                         wrap("div", class: 'next_main')
+                        $next_link = fetch("@href")
                     }
                 }
+                add_class_to("./div[@class='thumbnail']/img","mw-photo-main"){
+					wrap("a", href: $next_link)
+				}
 			}
 			add_class_to("./h1","mw-h1")
 		}
