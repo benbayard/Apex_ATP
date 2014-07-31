@@ -1,6 +1,8 @@
 jQuery(document).ready(function() {
   var item = 0;
-  var imgWidth = (((jQuery(window).width()-70)/2) - 5); //70 is width of the buttons and 20 is the margin
+  var jWindow = jQuery(window);
+  var screenWidth = jWindow.width() < jWindow.height()? jWindow.width() : jWindow.height();
+  var imgWidth = (((screenWidth-70)/2) - 5); //70 is width of the buttons and 20 is the margin
   var photoItemHeight = imgWidth + ((12 + 2) * 2) ; //image height + title height
   var itemHeight = (photoItemHeight * 2) + 10;
   console.log('Item Width :' + imgWidth + "item Height : " + itemHeight);    
@@ -16,7 +18,6 @@ jQuery(document).ready(function() {
     })
     jQuery('div:not(class) > .textwidget:first-child > .adsbygoogle').wrap("<div class='primary-ad'></div>");
     jQuery('.primary-ad').append('<div class="mw-border"></div>');
-  	
   });
 
   function CallBack(e){
