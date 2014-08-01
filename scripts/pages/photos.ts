@@ -5,25 +5,22 @@ $("./body"){
 	    	$("./div[@class='buttons']"){
 				add_class_to("./div[@id='floating-box']","mw-hide")
 			}
-			$("./div[@class='pic rounded-8']"){
-				add_class("mw-photo-frame")
-				move_here("../div[@class='buttons']/a","top"){
+            $("./div[@class='pic rounded-8']"){
+                add_class("mw-photo-frame")
+                move_here("../div[@class='buttons']/a","top"){
                     match(index(),1){
-						add_class('prev_main')
-						insert('div', class: 'prev sprites-icon-S-left_arrow')
-					}match(index(),2){
-						add_class('next_main')
-						insert('div', class: 'next sprites-icon-S-right_arrow')
-					}
+                        add_class('prev_main')
+                        insert('div', class: 'prev sprites-icon-S-left_arrow')
+                    }match(index(),2){
+                   		add_class('next_main')
+                        insert('div', class: 'next sprites-icon-S-right_arrow')
+                        $next_link = fetch("@href")
+                    }
                 }
-                $("./div[@class='thumbnail']"){
-                 	add_class_to("./img","mw-photo-main")
-                 	## Next page navigation when user clicks on main image
-                 	copy_here("./../div[@class='next_main']/a"){
-                 	 	move_here("./../img")
-                 	}
+                add_class_to("./div[@class='thumbnail']/img","mw-photo-main"){
+                    wrap("a", href: $next_link)
                 }
-			}
+            }
 			add_class_to("./h1","mw-h1")
 		}
 		$("./div[@class='right']"){
