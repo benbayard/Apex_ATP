@@ -16,6 +16,9 @@ jQuery(document).ready(function() {
         jQuery(this)[0].addEventListener('DOMNodeInserted', CallBack,false);
       }      
     })
+    jQuery("a.addthis_button_pinterest_share").click(function(){
+      jQuery("body").scrollTop("0")
+    })
    
   });
 
