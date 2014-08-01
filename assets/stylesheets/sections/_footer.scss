@@ -48,3 +48,10 @@ footer.mw-footer {
   	}
 
 }
+
+@media only screen 
+and (min-width : 321px) {
+  .right {
+ 	margin-left: 20% !important;   
+  }
+}
