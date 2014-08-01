@@ -71,7 +71,7 @@ jQuery(document).ready(function() {
         
   }
   function applyUraniumAttr(carousel_container,scroll_container){
-    carousel_container.addClass('mw-carousel-container').attr({'data-ur-set' : 'carousel', 'data-ur-infinite': "enabled"})
+    carousel_container.addClass('mw-carousel-container').attr({'data-ur-set' : 'carousel', 'data-ur-infinite': "enabled", "data-ur-fill":"2"})
     scroll_container.addClass('scroll_container').attr({'data-ur-carousel-component' : 'scroll_container'});
       
     var leftButton = jQuery('<div></div>').addClass('prev').attr({
@@ -101,7 +101,7 @@ jQuery(document).ready(function() {
     applyUraniumAttr(carousel_container,scroll_container);
     
     carousel_container.find('.ob_container .ob_container_recs a').each(function() {  	
-      var item_container = jQuery('<div data-ur-carousel-component="item" class="car_item"  style="width:'+imgWidth+'px;height: '+ itemHeight + 'px">');
+      var item_container = jQuery('<div data-ur-carousel-component="item" class="car_item"  style="height: '+ itemHeight + 'px">');
       jQuery(this).children('.item-container').css('height',  photoItemHeight);
   	 	item_container.append(this);
       scroll_container.append(item_container);

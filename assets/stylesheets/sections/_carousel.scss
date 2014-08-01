@@ -15,28 +15,29 @@
 	margin: 0 0 30px;
 }
 [data-ur-carousel-button-type="prev"] {
-	left: 0;	
+	left: -20px;	
 }
 [data-ur-carousel-button-type="next"] {
-	right: 0;
+	right: -20px;
 }
 .mw-carousel-container{
 	height:	auto; 
-	overflow:	hidden;
+	overflow:	visible;
 	padding-top: 0px !important;
 	width:	100%;
 	.scroll_container{
-		margin-left: 35px;// carousel button width + item padding
-		overflow: hidden;
+    // you cannot put a margin here. 
+		// margin-left: 35px;// carousel button width + item padding
+		// overflow: hidden;
 		padding-top: 5px !important;
 	}
 	.car_item {
-       	margin: 0 10px 10px 10px;
-        overflow: hidden
-    }
-	.item-link-container{
-		margin: 0 10px 10px 10px;
-	}
+    padding: 0 10px 10px 10px;
+    overflow: hidden
+  }
+	// .item-link-container{
+	// 	padding: 0 10px 10px 10px;
+	// }
 	.item-container{
 		width: 100% !important;
 		//height: 100% !important;

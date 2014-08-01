@@ -60,6 +60,7 @@
 [data-ur-carousel-component="scroll_container"] {
   display:block;
   clear:both;
+  margin: 0px!important;
   [data-ur-carousel-component="item"] {
     display:inline-block;
     float:left;
