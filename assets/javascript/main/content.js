@@ -18,11 +18,9 @@ jQuery(document).ready(function() {
       var imgWidth = (((screenWidth-60)/2)- 20); //70 is width of the buttons and 20 is the margin
       var photoItemHeight = imgWidth + ((12 + 2) * 2) + 30 ; //image height + title height
       console.log('Item Width :' + imgWidth + "item Height : " + photoItemHeight);    
-    
-      jQuery(this).addClass("mw-carousel-container");
-      jQuery(this).attr(
-        {"data-ur-set" : "carousel", "data-ur-infinite" : "enabled"}
-      );
+
+      jQuery(this).addClass("mw-carousel-container").attr({"data-ur-set" : "carousel", "data-ur-infinite" : "enabled" ,  "data-ur-fill":"2"});
+   
       var scrollcontainer = jQuery(this).children('.ob_container');
       scrollcontainer.addClass("scroll_container").attr("data-ur-carousel-component", "scroll_container");
       scrollcontainer.find('a.item-link-container').attr("data-ur-carousel-component", "item");
@@ -46,8 +44,8 @@ jQuery(document).ready(function() {
 
       jQuery(this).children('.ob_org_header').addClass('mw-h1');
       jQuery(this).before(jQuery(this).children('.ob_org_header'));
-
-      jQuery('a.item-link-container').css({width: imgWidth, height: photoItemHeight})
+      jQuery(this).parent().addClass("mw-carousel-holder").removeAttr('style');
+      jQuery('a.item-link-container').addClass('car_item').css({width: imgWidth, height: photoItemHeight})
       jQuery(".item-container").css('height',   photoItemHeight);
       jQuery(".scroll_container").css('height', photoItemHeight);
       jQuery('.ob_what').addClass('mw-ob-what');

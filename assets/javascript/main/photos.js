@@ -143,7 +143,7 @@ jQuery(document).ready(function() {
         jQuery(target).before(jQuery(target).children('.ob_org_header'));
         jQuery(target).find(".strip-rec-link-source").remove();
 
-        jQuery(target).find("a.item-link-container").css({width: imgWidth, height: photoItemHeight});
+        jQuery(target).find("a.item-link-container").addClass('car_item').css({width: imgWidth, height: photoItemHeight});
         jQuery(target).find(".item-container").css('height',  photoItemHeight );
         jQuery(target).find(".scroll_container").css('height', photoItemHeight + 10 );
         jQuery(target).find(".carousel-button").css('margin-top', ((imgWidth /2) - 10));
