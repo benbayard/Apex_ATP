@@ -79,6 +79,6 @@
       color: $thumbnail_title !important;
       text-decoration: none;
       -webkit-text-size-adjust:none;
-      margin: $zero-margin $std-spacing2;     
+      margin: $zero-margin -$carousel-item-spacing;     
     }
 }

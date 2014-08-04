@@ -41,7 +41,7 @@ $("./body"){
 				remove('./ins')
 				insert('div', class:  "primary-ad "){
 	 				insert_anchor_ad(300, 250, "7379774542")
-	 				insert('div', class: "mw-border")
+	 				#insert('div', class: "mw-border")
 	 			}		
        			 $("./div[@class='OUTBRAIN']") {
           			wrap("section", class:"mw-carousel-holder")

@@ -50,6 +50,7 @@ jQuery(document).ready(function() {
     //if(length > 5){
       var carousel_container = jQuery(target);
       var scroll_container = jQuery(carousel_container).find('div.ob_container');
+      carousel_container.prepend('<div class="mw-border"></div>');
       applyUraniumAttr(carousel_container,scroll_container);
       
       var carousel_item = 2;        
@@ -132,6 +133,8 @@ jQuery(document).ready(function() {
     jQuery('.mw-carousel-container').append('<div class="mw-border"></div>');
     jQuery(".scroll_container").find('a.item-link-container').find('.ob-text-content').addClass('mw-text-content')
     jQuery('.ob-rec-link-img').css('height',imgWidth);
+    jQuery('.ob_empty').hide();
+
     $('.mw-carousel-container').Uranium();//Works only with $ and not with jQuery
 
   }
