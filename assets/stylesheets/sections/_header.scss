@@ -4,14 +4,14 @@ header.mw-header{
 		font-size: $small-heading-font-size;
 		color: $white4;
 		font-family: $arial;
-		padding: 8px 0 8px 0;
+		padding: ($std-spacing -2) 0;
 		text-align: center;
 		font-weight: bold;
-		border-bottom: 1px solid $grey_border;
+		border-bottom: $border-width solid $grey_border;
 	}
 	.mw-google-ad{
 		text-align: center;
-		padding-top: 10px;
+		padding-top: $std-spacing;
 	}
 }
 	

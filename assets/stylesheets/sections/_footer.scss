@@ -3,14 +3,14 @@ footer.mw-footer {
 	font-size: $footer-font-size;
 	font-family: $sans-serif;
 	.wrapper{
-		margin: 10px;
+		margin: $std-spacing;
      }
 	.right{
-		margin-top: 5px;
-		margin-left: 30%;
+		margin-top: $short-padding;
+		margin-left: $logo-width;
 		color: $grey_footer_text;
 		.mw-anchors{
-			padding-top: 5px;
+			padding-top: $short-padding;
 			a{
 				font-size: $footer-font-size;
 				color: $grey_footer_text;
@@ -21,8 +21,8 @@ footer.mw-footer {
 		
 	}
 	.mw-app-logo{
-		padding: 15px 10px 0 0;
-		width: 30%;
+		padding: $std-spacing2 $std-spacing $zero-margin $zero-margin;
+		width: $logo-width;
 		a{
 			float: left;
 			img {
@@ -31,7 +31,7 @@ footer.mw-footer {
 		}
 	}
 	.mw-logo{
-		padding-top: 5px;
+		padding-top: $short-padding;
 		font-weight: bold;
 	}
 	.mw-google-footer-ad {
@@ -40,11 +40,11 @@ footer.mw-footer {
 	ins.adsbygoogle {
 	  background-color: white;
 	  position: fixed;
-	  bottom: 0;
+	  bottom: $zero-margin;
 	  z-index: 100;
-	  left: 0;
-	  right: 0;
-	  margin: 0 auto;
+	  left: $zero-margin;
+	  right: $zero-margin;
+	  margin: $zero-margin auto;
   	}
 
 }

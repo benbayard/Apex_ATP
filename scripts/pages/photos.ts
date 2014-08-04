@@ -9,11 +9,11 @@ $("./body"){
                 add_class("mw-photo-frame")
                 move_here("../div[@class='buttons']/a","top"){
                     match(index(),1){
-                        add_class('prev_main')
-                        insert('div', class: 'prev sprites-icon-S-left_arrow')
+                        add_class('main-img-btn')
+                        insert('div', class: 'sprites-icon-S-left_arrow')
                     }match(index(),2){
-                   		add_class('next_main')
-                        insert('div', class: 'next sprites-icon-S-right_arrow')
+                   		add_class('main-img-btn')
+                        insert('div', class: 'sprites-icon-S-right_arrow')
                         $next_link = fetch("@href")
                     }
                 }
@@ -41,7 +41,7 @@ $("./body"){
 				remove('./ins')
 				insert('div', class:  "primary-ad "){
 	 				insert_anchor_ad(300, 250, "7379774542")
-	 				insert('div', class: "mw-border")
+	 				#insert('div', class: "mw-border")
 	 			}		
        			 $("./div[@class='OUTBRAIN']") {
           			wrap("section", class:"mw-carousel-holder")
@@ -57,4 +57,5 @@ $("./body"){
 		## Share with friends moved to bottom
 		move_here("./div[contains(@class, 'mw-browse-share')]","bottom")		
 	}
+	hide('./div[@id="ad-wrapper-right"]')
 }

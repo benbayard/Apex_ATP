@@ -6,9 +6,9 @@
   margin: $zero-margin;
 
   .mw-carousel-holder {
-    padding: $zero-margin $padding4;
+    padding: $zero-margin ($side-margin - $carousel-item-spacing);// side padding calculated
     .primary-ad {
-      margin-left: -$padding2;
+      margin-left: -$carousel-item-spacing;
     }
   }
   #at3win{
@@ -17,7 +17,7 @@
       left: 2px !important;
     }
     h3{
-      margin: $zero-margin $padding2 !important;
+      margin: $zero-margin $std-spacing !important;
     }
   }
   .rounded-10 {
@@ -26,7 +26,7 @@
   }
   .mw-h1{
     text-align: center;
-    margin: $padding2 $zero-margin $padding2 $zero-margin;
+    margin: $std-spacing $zero-margin;
     &:first-child{
       color:  $purple;
     }
@@ -35,39 +35,30 @@
   .mw-photo-frame{
     position: relative;
     height: 100%;
-    padding-bottom: $padding2;
-    .prev_main{
+    padding-bottom: $std-spacing;
+    .main-img-btn{
       position: absolute;
       top: 40%;
-      left: $zero-margin;
       background: $carousel_arrow_background;
-      padding: $padding3 $padding2 $side-margin;
       width: $side-margin;
-      .prev {
-        position: inherit;
-      }
+      padding: $std-spacing;
     }
-    .next_main{
-      position: absolute;
-      top: 40%;
+    .prev{
+      left: $zero-margin;
+    }
+    .next{
       right: $zero-margin;
-      background: $carousel_arrow_background;
-      padding: $padding3 $padding2 $side-margin;
-      width: $side-margin;
-      .next {
-        position: inherit;
-      }
     }
     .thumbnail{
       margin: $zero-margin $side-margin;
       .mw-photo-main{
         width: 100%;
-        border: 1px $grey_border3 solid;
+        border: $border-width $grey_border3 solid;
       }
     }
   }
   .mw-browse-share{
-    margin: $zero-margin $side-margin $zero-margin $side-margin;
+    margin: $zero-margin $side-margin;
     .mw-share{
       margin-left: 7px;
       .mw-share-title{
@@ -93,12 +84,12 @@
   .mw-loading {
     width: 100%;
     background: url("/_moovweb_local_assets_/images/loading.GIF") no-repeat center;
-    background-size: $probar-bg-size $probar-bg-size;
-    height: $probar-hgt;
+    background-size: $progressbar-bg-size $progressbar-bg-size;
+    height: 200px;
   }
   .mw-border{
     border-bottom: $border-width solid $grey_border2;
-    margin: $padding2 $side-margin;
+    margin: $std-spacing $zero-margin;
   }
   .AR_2,.AR_1,.AR_3,.AR_4{
     width:100% !important;
@@ -108,7 +99,7 @@
     }
   }
   .ob_org_header{
-    margin-left: $padding2;
+    margin-left: $std-spacing;
     color: $white4 !important;
     font-size:$heading-font-size !important;
   }

@@ -15,14 +15,14 @@
 		color: $white4;
 		font-size: $base-font-size;
 		font-family: $arial;
-		padding: $zero-margin $side-margin $zero-margin $side-margin;
+		padding: $zero-margin $side-margin;
 	}
 	.outbrainGlobalClass{
 		border-top: $border-width solid $grey_border2;
-		margin: $padding2 $side-margin $padding2 $side-margin;
+		margin: $std-spacing $side-margin;
 	}
 	.mw-carousel-holder {
-    padding: $zero-margin $padding4;
+    padding: $zero-margin ($side-margin - $carousel-item-spacing);
     overflow: hidden;
     .ob_org_header {
     	padding-left: 7px;
