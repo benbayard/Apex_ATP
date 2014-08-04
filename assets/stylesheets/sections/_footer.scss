@@ -2,6 +2,7 @@ footer.mw-footer {
 	background-color: $grey_footer;
 	font-size: $footer-font-size;
 	font-family: $sans-serif;
+	-webkit-text-size-adjust:none;
 	.wrapper{
 		margin: $std-spacing;
      }

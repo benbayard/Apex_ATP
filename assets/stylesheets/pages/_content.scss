@@ -16,6 +16,7 @@
 		font-size: $base-font-size;
 		font-family: $arial;
 		padding: $zero-margin $side-margin;
+		-webkit-text-size-adjust:none;
 	}
 	.outbrainGlobalClass{
 		border-top: $border-width solid $grey_border2;
