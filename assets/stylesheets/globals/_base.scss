@@ -8,10 +8,10 @@
 	-webkit-text-size-adjust:none;
 }
 .mw-content-style{
-	color: #e3e2e2;
-	font-size: 12px;
+	color: $white1;
+	font-size: $base-font-size;
 	font-family: arial, helvetica, sans-serif;
-	padding-bottom: 15px;
+	padding-bottom: $padding3;
 }
 .strip-rec-link-title {
 	//white-space: nowrap;

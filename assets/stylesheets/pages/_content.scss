@@ -1,6 +1,6 @@
 .mw-details{
 	background: $grey_background;
-  	margin: 0;
+  	margin: $zero-margin;
   	.page{
 		color: $white4;
 		p a{
@@ -8,27 +8,27 @@
 		}	
 	}
 	.mw-h1{
-		padding-left: 30px;	
-		padding-right: 30px;		
+		padding-left: $side-margin;	
+		padding-right: $side-margin;		
 	}
 	.mw-content-style{
 		color: $white4;
 		font-size: $base-font-size;
 		font-family: $arial;
-		padding: 0px 30px 0px 30px;
+		padding: $zero-margin $side-margin $zero-margin $side-margin;
 	}
 	.outbrainGlobalClass{
-		border-top: 1px solid $grey_border2;
-		margin: 10px 30px 10px 30px;
+		border-top: $border-width solid $grey_border2;
+		margin: $padding2 $side-margin $padding2 $side-margin;
 	}
 	.mw-carousel-holder {
-    padding: 0px 20px;
+    padding: $zero-margin $padding4;
     overflow: hidden;
     .ob_org_header {
     	padding-left: 7px;
     }
   }
   .NA .strip-img{
-  	border: 1px $grey_border3 solid !important;
+  	border: $border-width $grey_border3 solid !important;
   }
 }
