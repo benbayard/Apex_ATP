@@ -71,58 +71,31 @@ jQuery(document).ready(function() {
     jQuery(target).find(".item-container").css('height',  photoItemHeight );
     jQuery(target).find(".scroll_container").css('height', itemHeight );
     jQuery(target).find(".carousel-button").css('margin-top', photoItemHeight);
-        
-  }
-  function applyUraniumAttr(carousel_container,scroll_container){
-    carousel_container.addClass('mw-carousel-container').attr({'data-ur-set' : 'carousel', 'data-ur-infinite': "enabled", "data-ur-fill":"2"})
-    scroll_container.addClass('scroll_container').attr({'data-ur-carousel-component' : 'scroll_container'});
-      
-    var leftButton = jQuery('<div></div>').addClass('prev').attr({
-        "data-ur-carousel-component": "button",
-        "data-ur-carousel-button-type":"prev"
-      });
-      var rightButton = jQuery('<div></div>').addClass('next').attr({
-        "data-ur-carousel-component": "button",
-        "data-ur-carousel-button-type":"next"
-      });    
+    
+}
 
-      var spritesLeft = jQuery('<div></div>').addClass('sprites-icon-S-left_arrow carousel-button');
-      var spritesRight = jQuery('<div></div>').addClass('sprites-icon-S-right_arrow carousel-button');
-      leftButton.append(spritesLeft);
-      rightButton.append(spritesRight);
-
-      carousel_container.prepend(leftButton).prepend(rightButton);
-  }
 
   function mergeRecommendations(){
-
-    
     var carousel_container = jQuery('.ob_strip_container:first');
     var scroll_container = jQuery(carousel_container).find('div.ob_container');
     scroll_container.css('height', itemHeight );
-    
     applyUraniumAttr(carousel_container,scroll_container);
-    
     carousel_container.find('.ob_container .ob_container_recs a').each(function() {  	
       var item_container = jQuery('<div data-ur-carousel-component="item" class="car_item"  style="height: '+ itemHeight + 'px">');
       jQuery(this).children('.item-container').css('height',  photoItemHeight);
   	 	item_container.append(this);
       scroll_container.append(item_container);
-  	});
-     
+  	}); 
   	var recommendationsContainer = jQuery('.ob_strip_container:last');
   	jQuery(recommendationsContainer).find('.ob_container .ob_container_recs a').each(function(index) {
       jQuery(this).children('.item-container').css('height',  photoItemHeight );
     	scroll_container.find('.car_item').eq(index).append(this);
   	});
-    
-
     carousel_container.find(".carousel-button").css('margin-top', photoItemHeight);
     carousel_container.find(".ob_container_recs, .strip-rec-link-source").remove();
     jQuery('.ob_strip_container:last, .mw-loading').remove();
   	jQuery('.ob_container, .ob_what').show();
-  	
-    jQuery('.AR_1 span:nth-child(4)').addClass("mw-ob-org-header");
+  	jQuery('.AR_1 span:nth-child(4)').addClass("mw-ob-org-header");
     jQuery('.AR_4').parent().parent().parent().remove();
     var around_web_recommendations = jQuery('center .OUTBRAIN').detach();
     jQuery('.OUTBRAIN:first').append(around_web_recommendations);
@@ -140,8 +113,6 @@ jQuery(document).ready(function() {
         var scrollcontainer = jQuery(target).children('.ob_container');
         scrollcontainer.find('a.item-link-container').attr("data-ur-carousel-component", "item");
         applyUraniumAttr(jQuery(target),scrollcontainer);
-        jQuery(target).children('.ob-custom-css').addClass('mw-hide');
-
         jQuery(target).children('.ob_org_header').addClass('mw-h1');
         jQuery(target).before(jQuery(target).children('.ob_org_header'));
         jQuery(target).find(".strip-rec-link-source").remove();

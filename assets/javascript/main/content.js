@@ -18,31 +18,12 @@ jQuery(document).ready(function() {
       var imgWidth = (((screenWidth-60)/2)- 20); //70 is width of the buttons and 20 is the margin
       var photoItemHeight = imgWidth + ((12 + 2) * 2) + 30 ; //image height + title height
       console.log('Item Width :' + imgWidth + "item Height : " + photoItemHeight);    
-
-      jQuery(this).addClass("mw-carousel-container").attr({"data-ur-set" : "carousel", "data-ur-infinite" : "enabled" ,  "data-ur-fill":"2"});
-   
       var scrollcontainer = jQuery(this).children('.ob_container');
-      scrollcontainer.addClass("scroll_container").attr("data-ur-carousel-component", "scroll_container");
+      applyUraniumAttr(jQuery(this),scrollcontainer);
       scrollcontainer.find('a.item-link-container').attr("data-ur-carousel-component", "item");
-      var leftButton = jQuery('<div></div>').addClass('prev carousel-button-container').attr("data-ur-carousel-component", "button");
-      var rightButton = jQuery('<div></div>').addClass('next carousel-button-container').attr("data-ur-carousel-component", "button");
-      jQuery(this).append(leftButton);
-      jQuery(this).append(rightButton);
-
-      var spritesLeft = jQuery('<div style="margin-top:'+((imgWidth /2) - 10)+'px"></div>').addClass('sprites-icon-S-left_arrow carousel-button');
-      var spritesRight = jQuery('<div style="margin-top:'+((imgWidth /2) - 10)+'px"></div>').addClass('sprites-icon-S-right_arrow carousel-button');
-      jQuery(this).children('.prev').append(spritesLeft);
-      jQuery(this).children('.prev').attr("data-ur-carousel-button-type","prev");
-      jQuery(this).children('.next').append(spritesRight);
-
-      jQuery(this).children('.next').attr("data-ur-carousel-button-type","next");
-      jQuery(this).children('.ob-custom-css').addClass('mw-hide');
-
       scrollcontainer.find('a.item-link-container').find('.ob-text-content').addClass('mw-text-content');
       (scrollcontainer).before(jQuery(this).children('.next'));
       (jQuery(this).children('.next')).before(jQuery(this).children('.prev'));
-
-      jQuery(this).children('.ob_org_header').addClass('mw-h1');
       jQuery(this).before(jQuery(this).children('.ob_org_header'));
       jQuery(this).parent().addClass("mw-carousel-holder").removeAttr('style');
       jQuery('a.item-link-container').addClass('car_item').css({width: imgWidth, height: photoItemHeight})
@@ -50,6 +31,7 @@ jQuery(document).ready(function() {
       jQuery(".scroll_container").css('height', photoItemHeight);
       jQuery('.ob_what').addClass('mw-ob-what');
       jQuery('.ob-rec-link-img').css('height',imgWidth);
+      jQuery(target).find(".carousel-button").css('margin-top', ((imgWidth /2) - 10));    
       $(this).Uranium();
 
     });
