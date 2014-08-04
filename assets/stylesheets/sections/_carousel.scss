@@ -10,15 +10,15 @@
 	z-index: 25;
 	background: $grey_background;	
 	position: absolute;
-	padding: $zero-margin $padding2;
+	padding: $zero-margin $std-spacing;
 	height: 100%;
 	margin: $zero-margin $zero-margin $side-margin;
 }
 [data-ur-carousel-button-type="prev"] {
-	left: -$padding4;	
+	left: -($side-margin - $carousel-item-spacing);	
 }
 [data-ur-carousel-button-type="next"] {
-	right: -$padding4;
+	right: -($side-margin - $carousel-item-spacing);
 }
 .mw-carousel-container{
 	height:	auto; 
@@ -29,19 +29,19 @@
     // you cannot put a margin here. 
 		// margin-left: 35px;// carousel button width + item padding
 		// overflow: hidden;
-		padding-top: $padding1 !important;
+		padding-top: $short-padding !important;
 	}
 	.car_item {
-    padding: $zero-margin $padding2 $padding2 $padding2;
+    padding: $zero-margin $carousel-item-spacing $carousel-item-spacing;
     overflow: hidden
   }
 	// .item-link-container{
-	// 	padding: $zero-margin $padding2 $padding2 $padding2;
+	
 	// }
 	.item-container{
 		width: 100% !important;
 		//height: 100% !important;
-		margin-bottom: $padding2 !important;
+		margin-bottom: $carousel-item-spacing !important;
 		padding-right: $zero-margin !important;
 	}
 	.ob-rec-link-img {
@@ -50,14 +50,14 @@
     .strip-img {
       width: 100% !important;
       height: 100% !important;
-      margin: $padding1;
+      margin: $short-padding;
     }
     .mw-text-content{
     	.strip-rec-link-title{
 			text-decoration: none;
 			text-overflow: ellipsis;
 			color: $thumbnail_title;
-			height: (($base-font-size + 2)*2) + 10;
+			height: (($base-font-size + 2)*2) + $std-spacing;
 	        overflow: hidden;
 	 		display: block;
 			display: -webkit-box;
@@ -68,17 +68,17 @@
 			font-size: $base-font-size;
 			line-height: $base-font-size + 2;
 			font-family:arial;
-			padding-top: $padding2;
+			padding-top: $std-spacing;
 		}
     }
 }
 .mw-ob-what {
-	padding: $padding2 $padding3 2px !important;
+	padding: $std-spacing $std-spacing2 2px !important;
 	a{
       font-family:arial !important;
       color: $thumbnail_title !important;
       text-decoration: none;
       -webkit-text-size-adjust:none;
-      margin: $zero-margin $padding3;     
+      margin: $zero-margin $std-spacing2;     
     }
 }
