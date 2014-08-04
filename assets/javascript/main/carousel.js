@@ -19,3 +19,5 @@ function applyUraniumAttr(carousel_container,scroll_container){
   carousel_container.prepend(leftButton).prepend(rightButton);
   carousel_container.parent().addClass('carousel-wrapper');
 }
+
+ 
