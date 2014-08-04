@@ -46,12 +46,14 @@ footer.mw-footer {
 	  right: $zero-margin;
 	  margin: $zero-margin auto;
   	}
-
+  	@media only screen 
+	and (orientation : landscape) {
+		.right {
+			margin-left: $logo-landscape-width !important;   
+		}
+		.mw-app-logo{
+			width: $logo-landscape-width !important;
+		}
+	}
 }
 
-@media only screen 
-and (min-width : 321px) {
-  .right {
- 	margin-left: 20% !important;   
-  }
-}

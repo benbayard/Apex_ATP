@@ -57,12 +57,12 @@
 			text-decoration: none;
 			text-overflow: ellipsis;
 			color: $thumbnail_title;
-			height: (($base-font-size + 2)*2) + $std-spacing;
+			height: (($base-font-size + 2)* $strip-title-no-of-lines) + $std-spacing;
 	        overflow: hidden;
 	 		display: block;
 			display: -webkit-box;
 			margin: $zero-margin auto;
-			-webkit-line-clamp: 2;
+			-webkit-line-clamp: $strip-title-no-of-lines;
 			-webkit-box-orient: vertical;
 			-webkit-text-size-adjust:none;
 			font-size: $base-font-size;
