@@ -19,6 +19,7 @@ jQuery(document).ready(function() {
     jQuery("a.addthis_button_pinterest_share").click(function(){
       jQuery("body").scrollTop("0")
     })
+    hideUnwanted();
   });
 
   function CallBack(e){
@@ -104,7 +105,7 @@ jQuery(document).ready(function() {
     jQuery(".scroll_container").find('a.item-link-container').find('.ob-text-content').addClass('mw-text-content')
     jQuery('.ob-rec-link-img').css('height',imgWidth);
     jQuery('.ob_empty').hide();
-
+    hideUnwanted();
     $('.mw-carousel-container').Uranium();//Works only with $ and not with jQuery
   }
   
@@ -123,5 +124,10 @@ jQuery(document).ready(function() {
         jQuery(target).find(".item-container").css('height',  photoItemHeight );
         jQuery(target).find(".scroll_container").css('height', photoItemHeight + 10 );
         jQuery(target).find(".carousel-button").css('margin-top', ((imgWidth /2) - 10));
+    }
+    function hideUnwanted(){
+      jQuery('.textwidget').children().not('.mw-carousel-holder, .primary-ad, .addthis_toolbox, .adsbygoogle').hide();
+      jQuery("*[id^=IL_]").remove();
+      jQuery('#container').nextUntil('footer').hide();
     }
 });
