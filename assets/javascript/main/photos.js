@@ -105,7 +105,7 @@ jQuery(document).ready(function() {
     jQuery(".scroll_container").find('a.item-link-container').find('.ob-text-content').addClass('mw-text-content')
     jQuery('.ob-rec-link-img').css('height',imgWidth);
     jQuery('.ob_empty').hide();
-    hideUnwanted();
+    setTimeout(hideUnwanted, 2000);
     $('.mw-carousel-container').Uranium();//Works only with $ and not with jQuery
   }
   
