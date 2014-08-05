@@ -1,6 +1,7 @@
 jQuery(document).ready(function() {
   jQuery("body.mw-details").each(function(){
     jQuery('.page')[0].addEventListener('DOMNodeInserted', CallBack,false);
+    jQuery("*[id^='IL_']").remove();
   });
 
   function CallBack(e){

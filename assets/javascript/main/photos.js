@@ -11,7 +11,7 @@ jQuery(document).ready(function() {
     mainContainer.find('.OUTBRAIN').each(function(){
       var dynaContainer= jQuery(this).children('.ob_strip_container')
       if(dynaContainer.length > 0){
-        onOBContentLoad(this);
+        onOBContentLoad(dynaContainer);
       }else{
         jQuery(this)[0].addEventListener('DOMNodeInserted', CallBack,false);
       }      
