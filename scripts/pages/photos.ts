@@ -58,4 +58,8 @@ $("./body"){
 		move_here("./div[contains(@class, 'mw-browse-share')]","bottom")		
 	}
 	hide('./div[@id="ad-wrapper-right"]')
+	remove("./script[contains(@src,'http://resources.infolinks.com')]")
+}
+$("./head"){
+	remove("./script[contains(@src,'http://resources.infolinks.com')]")
 }
