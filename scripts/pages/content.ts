@@ -6,8 +6,8 @@ $("./body"){
 		add_class_to("./div", "mw-content-style")
 		add_class_to("./ol", "mw-content-style")
 	}
-	remove("./script[contains(@src,'http://resources.infolinks.com')]")
+	remove("./script[contains(@src,'resources.infolinks.com')]")
 }
 $('./head'){
-	remove("./script[contains(@src,'http://resources.infolinks.com')]")
+	remove("./script[contains(@src,'resources.infolinks.com')]")
 }
