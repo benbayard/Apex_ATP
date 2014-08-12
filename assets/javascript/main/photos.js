@@ -36,7 +36,6 @@ jQuery(document).ready(function() {
     item++;
     if(item == 2){
       transformTwoRowCarousel(target);
-      jQuery('.primary-ad').detach().insertAfter('.ob_strip_container:first');
     }else if(item==3){
       transformSingleRowCarousel(target);
     }
@@ -49,7 +48,6 @@ jQuery(document).ready(function() {
   	var length = jQuery(target).find('div.ob_container .ob_container_recs a').length;
     var carousel_container = jQuery(target);
     var scroll_container = jQuery(carousel_container).find('div.ob_container');
-    carousel_container.prepend('<div class="mw-border"></div>');
     applyUraniumAttr(carousel_container,scroll_container);
     
     var imagesPerItem = 2;        

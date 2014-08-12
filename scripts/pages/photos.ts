@@ -39,13 +39,13 @@ $("./body"){
 			$('./div[@class="textwidget"][1]'){
 				remove('./iframe')
 				remove('./ins')
-				insert('div', class:  "primary-ad "){
+				insert_at("top", 'div', class:  "primary-ad "){
 	 				insert_anchor_ad(300, 250, "7379774542")
-	 				#insert('div', class: "mw-border")
-	 			}		
-       			 $("./div[@class='OUTBRAIN']") {
+	 				insert('div', class: "mw-ad-border")	
+	 			}
+	 			$("./div[@class='OUTBRAIN']") {
           			wrap("section", class:"mw-carousel-holder")
-       			 }
+       			}
 			}
 			$('./div[@class="textwidget"][2]'){	
 				$("./div[@class='OUTBRAIN']") {
